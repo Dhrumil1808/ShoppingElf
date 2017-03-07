@@ -18,13 +18,15 @@ Interactive chat feature will be accomplished by using Conversation api at bluem
 
 Reference: https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 
+
 Human or Robot?
 
 In today's digital world, softwares are used everywhere to expedite the completion of the task.  Thus, the robots are also used in the online auction site for the bidding process. Due to this, unfortunately, human bidders are unable to compete with the software controlled robots. 
-
 In order to prevent the unfair auction activity, it is necessary to prevent the robots from bidding in the auction.
+
 Our goal will be to identify the online auction bids placed by "robots", so that the site owners could easily remove their auctions from the website and make the bidding process fair.
 
+We will use classification techniques like Naive Bayes, Decision Trees and Linear Regression.
 
 
 Reference: https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot
