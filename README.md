@@ -4,7 +4,7 @@ Project Idea:
 
 Pricify
 
-Finding your dream house is painstaking job nowadays and what makes it more difficult is knowing correct price for it! 
+Finding your dream house is painstaking job nowadays and what makes it harder is knowing correct price for it! 
 Or 
 If you are selling your house getting right is again a worrisome job.
 
@@ -17,3 +17,4 @@ Interactive chat feature will be accomplished by using Conversation API at bluem
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/precify.png)
 
 Reference: https://www.kaggle.com/c/house-prices-advanced-regression-techniques
+
