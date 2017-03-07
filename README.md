@@ -6,7 +6,7 @@ Project Idea:
 
 Finding your dream house is painstaking job nowadays and what makes it harder is knowing correct price for it! 
 Or 
-If you are selling your house getting right is again a worrisome job.
+If you are selling your house getting right price is again a worrisome job.
 
 We have decided to build an interactive chatbot application will ask a home buyer to describe their dream house and will extract features from text to predict house price. 
 
