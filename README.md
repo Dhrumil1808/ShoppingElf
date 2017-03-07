@@ -18,7 +18,6 @@ Interactive chat feature will be accomplished by using Conversation API at bluem
 
 Reference: https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 
-
 2) Human or Robot?
 
 In today's digital world, softwares are used everywhere to expedite the completion of the task.  Thus, the robots are also used in the online auction site for the bidding process. Due to this, unfortunately, human bidders are unable to compete with the software controlled robots. 
