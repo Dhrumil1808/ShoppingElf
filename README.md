@@ -2,7 +2,7 @@
 
 Project Idea: 
 
-Pricify
+1) Pricify
 
 Finding your dream house is painstaking job nowadays and what makes it harder is knowing correct price for it! 
 Or 
@@ -19,7 +19,7 @@ Interactive chat feature will be accomplished by using Conversation API at bluem
 Reference: https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 
 
-Human or Robot?
+2) Human or Robot?
 
 In today's digital world, softwares are used everywhere to expedite the completion of the task.  Thus, the robots are also used in the online auction site for the bidding process. Due to this, unfortunately, human bidders are unable to compete with the software controlled robots. 
 In order to prevent the unfair auction activity, it is necessary to prevent the robots from bidding in the auction.
@@ -31,3 +31,14 @@ We will use classification techniques like Naive Bayes, Decision Trees and Linea
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/robot.png)
 
 Reference: https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot
+
+3) Guide
+
+People visit different places often in the vacation. To make more effective and enjoyable vacation or more meaningful, this idea can be implemented.
+
+As per already visited places and spent time, data will be analyzed on the basis of many features and that will be generate places or particular locations that user may visit or willing to visit. 
+On the other hand, quality places may also be advised to user that they are not visiting these places  which have these specific subject of interest.
+
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/guide.png)
+
+Reference : http://ranjanr.blogspot.com/ 
