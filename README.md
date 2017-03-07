@@ -14,7 +14,7 @@ We will use advanced regression techniques like random forest and gradient boost
 On approximately 79 feature set to design self learning algorithm for price prediction.
 Interactive chat feature will be accomplished by using Conversation api at bluemix.net
 
-![My Image](https://github.com/SJSU272LabS17/Project-Team-6/precify.png)
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/precify.png)
 
 Reference: https://www.kaggle.com/c/house-prices-advanced-regression-techniques
 
