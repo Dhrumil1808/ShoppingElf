@@ -33,10 +33,10 @@ Reference: https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot
 
 3) Guide
 
-People visit different places often in the vacation. To make more effective and enjoyable vacation or more meaningful, this idea can be implemented.
+People visit different places often in the vacation. To make more efficient and enjoyable vacation or more meaningful, this idea can be implemented.
 
-As per already visited places and spent time, data will be analyzed on the basis of many features and that will be generate places or particular locations that user may visit or willing to visit. 
-On the other hand, quality places may also be advised to user that they are not visiting these places  which have these specific subject of interest.
+As per already visited places and spent time, data will be analyzed on the basis of many features and that will be generated places or particular locations that user may visit or willing to visit. On the other hand, quality places may also be advised to a user that they are not visiting these places which have these particular subject of interest.
+
 
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/guide.png)
 
