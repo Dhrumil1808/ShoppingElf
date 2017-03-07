@@ -28,5 +28,6 @@ Our goal will be to identify the online auction bids placed by "robots", so that
 
 We will use classification techniques like Naive Bayes, Decision Trees and Linear Regression.
 
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/robot.png)
 
 Reference: https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot
