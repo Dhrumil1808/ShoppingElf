@@ -17,6 +17,8 @@ Interactive chat feature will be accomplished by using Conversation API at bluem
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/precify.png)
 
 Reference: https://www.kaggle.com/c/house-prices-advanced-regression-techniques
+####Prof: I like this idea of collecting input from user and building various models to predict home value. I would suggest to build not just home value but 6 or more comparable sales in that area. Before a buyer goes bidding or buying on a house he needs to validate the authenticity of your projected price. Only way to do that is to build comparables.
+Also make sure you build a recommended system in this case build home values in other US cities as well. talk to me more about it.. 
 
 2) Human or Robot?
 
