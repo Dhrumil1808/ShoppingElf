@@ -1,6 +1,16 @@
 # Project-Team-6
 
-Project Idea: 
+New Project Ideas: 
+
+1) Pre Store
+Customer does shopping from store and receipt gets generated. 
+Customer will upload receipt for every shopping and after analyzing those shopping items, notifications will be given to the customer about to do shopping list.
+
+Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
+ 
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Prestore.png)
+
+Old Ideas:
 
 1) Pricify
 
