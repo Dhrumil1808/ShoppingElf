@@ -2,13 +2,27 @@
 
 New Project Ideas: 
 
-1) Pre Store
+## 1) In-Store
+
+A customer walks into a grocery store after a long, hard day at work. Needless to say, the person is already not in the mood to shop. After taking a quick glance at the shopping list, the person pushes the cart around briskly, grabs the necessities and tosses them into the cart. As the person jostles the way through the crowded aisles, he/she is unable to find one or two products from the shopping list. The store associate, however, is nowhere to be found. The person is no longer interested in pruchasing that products. Thus, the person picks up whatever they can find, proceeds to the billing counter and after an agonizingly long wait, makes the payment and leaves.
+
+Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
+
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/InStore.png)
+
+## 2) Pre-store
+
 Customer does shopping from store and receipt gets generated. 
-Customer will upload receipt for every shopping and after analyzing those shopping items, notifications will be given to the customer about to do shopping list.
+Customer will upload receipt for every shopping and after analyzing those shopping items, notifications and suggestions of stores and items will be given to the customer about to do shopping list.
 
 Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
  
-![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Prestore.png)
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/PreStore.png)
+
+
+
+
+
 
 Old Ideas:
 
