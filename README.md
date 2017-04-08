@@ -6,9 +6,11 @@ New Project Ideas:
 
 A customer walks into a grocery store after a long, hard day at work. Needless to say, the person is already not in the mood to shop. After taking a quick glance at the shopping list, the person pushes the cart around briskly, grabs the necessities and tosses them into the cart. As the person jostles the way through the crowded aisles, he/she is unable to find one or two products from the shopping list. The store associate, however, is nowhere to be found. The person is no longer interested in pruchasing that products. Thus, the person picks up whatever they can find, proceeds to the billing counter and after an agonizingly long wait, makes the payment and leaves.
 
+We have decided to build a mobile application which will provude a hassle free solution to the customers. The staff employees will upload the product in the app when they are refilling the stock in the store. Our app will track the exact location of that particular product and when the user searches for that particular product, they will get a direction to reach to that product.
+
 Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
 
-![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Instore.png)
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/InStore.png)
 
 ## 2) Pre-store
 
@@ -17,11 +19,7 @@ Customer will upload receipt for every shopping and after analyzing those shoppi
 
 Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
  
-![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Prestore.png)
-
-
-
-
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/PreStore.png)
 
 
 Old Ideas:
