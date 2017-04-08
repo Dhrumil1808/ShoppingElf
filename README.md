@@ -10,7 +10,7 @@ We have decided to build a mobile application which will provude a hassle free s
 
 Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
 
-![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/InStore.png)
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Instore.png)
 
 ## 2) Pre-store
 
@@ -19,7 +19,7 @@ Customer will upload receipt for every shopping and after analyzing those shoppi
 
 Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
  
-![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/PreStore.png)
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Prestore.png)
 
 
 Old Ideas:
