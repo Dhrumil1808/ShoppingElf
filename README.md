@@ -26,7 +26,7 @@ Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery
 
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Instore.png)
 
-#############################################################################################################################
+#######################################################################################
 ## Old Ideas:
 
 1) Pricify
