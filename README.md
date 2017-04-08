@@ -2,27 +2,32 @@
 
 New Project Ideas: 
 
-## 1) In-Store
+## 1) Shopping-Elf App
 
-A customer walks into a grocery store after a long, hard day at work. Needless to say, the person is already not in the mood to shop. After taking a quick glance at the shopping list, the person pushes the cart around briskly, grabs the necessities and tosses them into the cart. As the person jostles the way through the crowded aisles, he/she is unable to find one or two products from the shopping list. The store associate, however, is nowhere to be found. The person is no longer interested in pruchasing that products. Thus, the person picks up whatever they can find, proceeds to the billing counter and after an agonizingly long wait, makes the payment and leaves.
+Customers like to believe that businesses understand them. The incorporation of mobile into the store allows tracking of their previous purchases and search history to target each customer as an individual with customized recommendations and repeatable baskets.Furthermore, mobile apps with inbuilt machine learning algorithms can remind users when they are likely to run out of groceries and help them prepare the to-buy list automatically.
 
-We have decided to build a mobile application which will provude a hassle free solution to the customers. The staff employees will upload the product in the app when they are refilling the stock in the store. Our app will track the exact location of that particular product and when the user searches for that particular product, they will get a direction to reach to that product.
-
-Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
-
-![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Instore.png)
-
-## 2) Pre-store
-
-Customer does shopping from store and receipt gets generated. 
-Customer will upload receipt for every shopping and after analyzing those shopping items, notifications and suggestions of stores and items will be given to the customer about to do shopping list.
+ ```
+Customer scans reciepts on App, App stores analyzes data and user gets notifications on low inventory, automated shopping lists every month/weekly and nearest store suggestions. Buying patterns can be analyzed for diet and health products recommendations etc.
+ ```
 
 Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
  
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Prestore.png)
 
 
-Old Ideas:
+
+## 2) Store Navigator
+
+A customer walks into a grocery store after a long, hard day at work. Needless to say, the person is already not in the mood to shop. After taking a quick glance at the shopping list, the person pushes the cart around briskly, grabs the necessities and tosses them into the cart. As the person jostles the way through the crowded aisles, he/she is unable to find one or two products from the shopping list. The store associate, however, is nowhere to be found. The person is no longer interested in pruchasing that products. Thus, the person picks up whatever they can find, proceeds to the billing counter and after an agonizingly long wait, makes the payment and leaves.
+```
+We have decided to build a mobile application which will provude a hassle free solution to the customers. The staff employees will upload the product in the app when they are refilling the stock in the store. Our app will track the exact location of that particular product and when the user searches for that particular product, they will get a direction to reach to that product.
+```
+Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
+
+![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Instore.png)
+
+#############################################################################################################################
+## Old Ideas:
 
 1) Pricify
 
