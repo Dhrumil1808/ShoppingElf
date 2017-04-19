@@ -1,6 +1,3 @@
-# Project-Team-6
-
-New Project Ideas: 
 
 ## 1) Shopping-Elf App - APPROVED
 
