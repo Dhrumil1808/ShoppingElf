@@ -18,7 +18,10 @@ def userInput(filename):
                           files={filename: f},
                           data=payload,
                           )
+    	print r.json()
     	return r.content.decode()
+
+    
 		
 if __name__ == "__main__":
 	app.run(debug=True,host='0.0.0.0')
