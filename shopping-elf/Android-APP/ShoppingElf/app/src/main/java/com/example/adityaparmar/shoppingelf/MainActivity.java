@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         Boolean res = getloginuserdata();     //authonticationlogin(email,password);
         if(res)
         {
-            Intent i = new Intent(this, Home.class);
+            Intent i = new Intent(this, Recipt.class);
             //i.putExtra("email",email);
             startActivity(i);
         }
         else {
-            Intent j = new Intent(this, LoginActivity.class);
+            Intent j = new Intent(this, Recipt.class);
             startActivity(j);
         }
 
