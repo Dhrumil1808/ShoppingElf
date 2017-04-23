@@ -1,13 +1,19 @@
 import subprocess
 import re
 import shlex
+import ReceiptService as receiptService;
+from Models import BillReceipt
+from Models import BillItem
 
-class ImageOutput:
+class ImageProcessor:
 	username = None
 	filename = None
-	def __init__(self,username,filename):
-		username = self.username
-		filename = self.filename
+	billDate = None
+
+	def __init__(self,username,filename,billDate):
+		self.username = username
+		self.filename = filename
+		self.billDate= billDate
 
 	def getImageContents(self):
 		proc = subprocess.Popen(['python', 'pytesseract.py',  'final.jpeg'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -16,7 +22,7 @@ class ImageOutput:
 		originalOutput = proc.communicate()[0]
 		originalString = str(originalOutput)
 		#print originalString
-
+		items = [];
 		groupBynewLine = re.split(r'[\n\r]+', originalString)
 		del groupBynewLine[0]
 		del groupBynewLine[0]
@@ -58,7 +64,13 @@ class ImageOutput:
 			else:
 				k1=shlex.split(j1)[0]
 				dic[i1]=k1
-		# print '444444'
-		# print dic
-		print self.username
+
+		#create bill receipt_data
+
+		for k, v in dic.items():
+			billItem = BillItem (k,float(v));
+			items.append(billItem);
+		billReceipt = BillReceipt (self.username,items,self.billDate);
+		receiptService.addUserReciept(billReceipt);
+
 		return dic

@@ -44,7 +44,7 @@ http://wiki.github.com/hoffstaetter/python-tesseract
 # CHANGE THIS IF TESSERACT IS NOT IN YOUR PATH, OR IS NAMED DIFFERENTLY
 tesseract_cmd = 'tesseract'
 
-import Image
+from PIL import Image
 import StringIO
 import subprocess
 import sys
@@ -56,19 +56,19 @@ def run_tesseract(input_filename, output_filename_base, lang=None, boxes=False):
     '''
     runs the command:
         `tesseract_cmd` `input_filename` `output_filename_base`
-    
+
     returns the exit status of tesseract, as well as tesseract's stderr output
 
     '''
 
     command = [tesseract_cmd, input_filename, output_filename_base]
-    
+
     if lang is not None:
         command += ['-l', lang]
 
     if boxes:
         command += ['batch.nochop', 'makebox']
-    
+
     proc = subprocess.Popen(command,
             stderr=subprocess.PIPE)
     return (proc.wait(), proc.stderr.read())
@@ -163,4 +163,3 @@ if __name__ == '__main__':
     else:
         sys.stderr.write('Usage: python tesseract.py [-l language] input_file\n')
         exit(2)
-
