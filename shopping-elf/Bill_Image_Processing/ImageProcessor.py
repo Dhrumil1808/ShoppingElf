@@ -5,6 +5,8 @@ import ReceiptService as receiptService;
 from Models import BillReceipt
 from Models import BillItem
 
+
+
 class ImageProcessor:
 	username = None
 	filename = None
@@ -16,7 +18,7 @@ class ImageProcessor:
 		self.billDate= billDate
 
 	def getImageContents(self):
-		proc = subprocess.Popen(['python', 'pytesseract.py',  'final.jpeg'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+		proc = subprocess.Popen(['python', 'pytesseract.py',  'uploads/'+self.filename], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 		#print proc.communicate()[0]
 
 		originalOutput = proc.communicate()[0]
