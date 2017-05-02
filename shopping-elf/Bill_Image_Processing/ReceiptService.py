@@ -3,10 +3,8 @@ from time import gmtime, strftime
 from Models import BillReceipt
 from Models import BillItem
 
-
-cluster = Cluster()
+cluster = Cluster(['10.0.0.98'])
 session = cluster.connect('shopping_elf')
-
 
 def addUserReciept(billReceipt):
     bill_date= billReceipt.billDate;
