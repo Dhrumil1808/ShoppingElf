@@ -6,3 +6,7 @@ sudo pip install flask
 sudo pip install Cluster
 sudo pip install cassandra-driver
 sudo pip install jsonify
+sudo pip install image
+sudo pip install pytesseract
+sudo pip install tesseract-ocr
+sudo apt install tesseract-ocr

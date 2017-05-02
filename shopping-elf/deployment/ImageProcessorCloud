@@ -1,0 +1,28 @@
+Request
+http://54.241.140.236:5000/bill/upload/rash
+
+Header
+Content-Type : application/json
+
+Body
+file : final.jpeg
+billDate : 2017-01-01
+
+Response
+[
+  {
+    "CANTAIOUPE MELONS": 1,
+    "CLUSTER TOMATOES": "2.94",
+    "CUCUMBERS": "4",
+    "HALF PT BLUEBERRIES": "2",
+    "LARGE NAVEL ORANGES": "2.75",
+    "LIMES": "5",
+    "ORG STRAWBERRIES": "1",
+    "PURPLE SWEET POTATO": "1.29",
+    "REDUCED FAT MILK": "2",
+    "X LG HASSlAggCADOS": 1,
+    "YELLOW BANANAS": "2.",
+    "YELLOW MANGOS": "2"
+  },
+  "rash"
+]
