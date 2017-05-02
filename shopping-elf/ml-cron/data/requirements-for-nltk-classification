@@ -1,0 +1,4 @@
+pandas
+mpld3
+>>> import nltk
+>>> nltk.download()
