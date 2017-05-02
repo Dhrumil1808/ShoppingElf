@@ -1,3 +1,15 @@
+Installed Cassandra on EC2 instance.
+
+Go to /home/ubuntu/apache-cassandra-3.10/bin :
+Run this command to start cassandra: sudo cassandra -R &
+
+nodetool status : To check on which port its Up and normal.
+
+cqlsh 127.0.0.1;
+describe keyspaces;
+
+Inserted schema in EC2 instance Cassandra database to save processed image data.
+
 sudo apt-get install git
 sudo git clone https://github.com/SJSU272LabS17/Project-Team-6.git
 sudo apt-get install python-pip python-dev build-essential 
@@ -10,3 +22,5 @@ sudo pip install image
 sudo pip install pytesseract
 sudo pip install tesseract-ocr
 sudo apt install tesseract-ocr
+
+
