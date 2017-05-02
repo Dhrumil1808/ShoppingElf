@@ -1,24 +1,10 @@
-CREATE KEYSPACE shopping_elf WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+CREATE KEYSPACE shopping_elf WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
-
-CREATE TABLE shopping_elf.receipt_data
-( userId TEXT,
-  bill_date date,
-  qty int,
-  create_time date,
-  product_name text,
-  id text,
-  PRIMARY KEY(id)
-);
-
-
-INSERT INTO shopping_elf.receipt_data (id,userId, bill_date1, qty,
-   create_time, product_name) VALUES('1_B','2', '2017-02-01', 1, '2017-04-20','B');
-
-   SELECT * FROM shopping_elf.receipt_data;
-
-
-   create column family data
-   with key_validation_class=Int32Type
-   and comparator=DateType
-   and default_validation_class=FloatType;
+CREATE TABLE shopping_elf.receipt_data (
+    userid text,
+    product_name text,
+    bill_date date,
+    qty double,
+    time date,
+    PRIMARY KEY (userid, product_name, bill_date)
+) WITH CLUSTERING ORDER BY (product_name ASC, bill_date ASC)
