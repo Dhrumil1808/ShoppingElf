@@ -70,6 +70,7 @@ class ImageProcessor:
 		#create bill receipt_data
 
 		for k, v in dic.items():
+			print v
 			billItem = BillItem (k,float(v));
 			items.append(billItem);
 		billReceipt = BillReceipt (self.username,items,self.billDate);
