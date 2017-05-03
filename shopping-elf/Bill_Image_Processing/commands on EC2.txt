@@ -23,4 +23,4 @@ sudo pip install pytesseract
 sudo pip install tesseract-ocr
 sudo apt install tesseract-ocr
 
-
+sudo pip install pillow
