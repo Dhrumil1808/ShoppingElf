@@ -43,9 +43,16 @@ def tokenize_only(text):
 #use extend so it's a big flat list of vocab
 totalvocab_stemmed = []
 totalvocab_tokenized = []
+words= {}
+
+
+
 with open("data/product-data.txt","r") as text_file:
     lines = text_file.read().split("\n")
+
 for i in lines:
+    print i
+    words[i]=i
     allwords_stemmed = tokenize_and_stem(i) #for each item in 'synopses', tokenize/stem
     totalvocab_stemmed.extend(allwords_stemmed) #extend the 'totalvocab_stemmed' list
 
@@ -56,10 +63,7 @@ vocab_frame = pd.DataFrame({'words': totalvocab_tokenized}, index = totalvocab_s
 print 'there are ' + str(vocab_frame.shape[0]) + ' items in vocab_frame'
 
 print vocab_frame.head()
-print
-print
-print
-print
+
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -68,7 +72,47 @@ tfidf_vectorizer = TfidfVectorizer(max_df=0.8, max_features=200000,
                                  min_df=0.2, stop_words='english',
                                  use_idf=True, tokenizer=tokenize_and_stem, ngram_range=(1,3))
 
-tfidf_matrix = tfidf_vectorizer.fit_transform(synopses)
+tfidf_matrix = tfidf_vectorizer.fit_transform(words)
  #fit the vectorizer to synopses
 
 print(tfidf_matrix.shape)
+
+terms = tfidf_vectorizer.get_feature_names()
+
+from sklearn.metrics.pairwise import cosine_similarity
+dist = 1 - cosine_similarity(tfidf_matrix)
+print dist
+print terms
+
+
+from sklearn.cluster import KMeans
+
+num_clusters = 5
+
+km = KMeans(n_clusters=num_clusters)
+
+km.fit(tfidf_matrix)
+
+clusters = km.labels_.tolist()
+
+
+from sklearn.externals import joblib
+
+#uncomment the below to save your model
+#since I've already run my model I am loading from the pickle
+
+#joblib.dump(km,  'doc_cluster.pkl')
+
+km = joblib.load('doc_cluster.pkl')
+clusters = km.labels_.tolist()
+
+
+products = { 'name': name}
+
+frame = pd.DataFrame(films, products = [clusters] , columns = ['name'])
+
+frame['cluster'].value_counts()
+
+grouped = frame['rank'].groupby(frame['cluster']) #groupby cluster for aggregation purposes
+
+grouped.mean()
