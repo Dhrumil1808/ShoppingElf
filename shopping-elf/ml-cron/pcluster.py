@@ -44,11 +44,7 @@ def cluster_texts(texts, clusters=3):
     tfidf_model = vectorizer.fit_transform(texts)
     km_model = KMeans()
     km_model.fit(tfidf_model)
-    #pred= vectorizer.fit_transform(["bread","whole-wheat","help","oats","pita"])
-    #print pred
-    #out = km_model.predict(pred)
-    #print "ssssss";
-    #print out;
+
 
     clustering = collections.defaultdict(list)
 

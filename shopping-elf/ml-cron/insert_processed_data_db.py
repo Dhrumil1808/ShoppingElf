@@ -6,6 +6,10 @@ import random
 from datetime import datetime
 import MySQLdb
 
+
+
+
+
 db = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      user="root",         # your username
                      passwd="root",  # your password
@@ -56,10 +60,17 @@ for index in range(1, len(all_lines)-1):
         cur.execute("UPDATE inventory SET invoice_date='%s',days= '%s',cron_date= '%s' WHERE user_id ='%s' AND product_name='%s'" %(invoice_date_updated,days,cron_date,user_id,product_name))
         db.commit()
     else:
-        cur.execute("SELECT * FROM `inventory`") 
+        cur.execute("SELECT * FROM `inventory`")
         rows=cur.fetchall()
         cur.execute("INSERT INTO `inventory`(id,user_id,product_name,invoice_date,days,cron_date) VALUES (%s,%s,%s, STR_TO_DATE(%s,'%%m-%%d-%%Y'),%s,%s)", (len(rows) + 1,user_id,product_name,invoice_date,days,cron_date))
         print len(rows)
         db.commit()
 
-db.close()  
+db.close()
+
+
+
+def getProductData(products):
+    cur = db.cursor()
+    cur.execute("SELECT * FROM `inventory` WHERE  product_name in (%s)" %(products))
+    rows=cur.fetchall()

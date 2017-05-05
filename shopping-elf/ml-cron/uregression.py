@@ -6,20 +6,20 @@
 #get_ipython().magic(u'matplotlib inline')
 
 
-# 
+#
 # # Linear Regression Example
-# 
+#
 # This example uses the only the first feature of the `diabetes` dataset, in
 # order to illustrate a two-dimensional plot of this regression technique. The
 # straight line can be seen in the plot, showing how linear regression attempts
 # to draw a straight line that will best minimize the residual sum of squares
 # between the observed responses in the dataset, and the responses predicted by
 # the linear approximation.
-# 
+#
 # The coefficients, the residual sum of squares and the variance score are also
 # calculated.
-# 
-# 
+#
+#
 
 # In[ ]:
 
@@ -51,6 +51,13 @@ def days_between(d1, d2):
     d2 = datetime.strptime(d2, "%m-%d-%Y")
     return abs((d2 - d1).days)
 
+
+//
+def estimate_days(productData):
+
+
+
+
 with open("data/user-product-sample.txt","r") as text_file:
     all_lines = text_file.read().split("\n")
 
@@ -78,7 +85,7 @@ for index in range(1, len(all_lines)):
     next_date=all_lines[index].split("|")[1]
     qty= float(all_lines[index-1].split("|")[2])
     qty_latest=float(all_lines[index].split("|")[2])
-    
+
     #condition runs for the last entry in the database
     if(index==len(all_lines)-1):
         qty_array=[]
@@ -86,10 +93,10 @@ for index in range(1, len(all_lines)):
         products=np.array(products_array).reshape(len(products_array),1)
         #print days
         days_test=np.array(random.sample(range(1,30),len(days_array)-1))
-        
+
         #print days_test
         qty_array.append(qty_latest)
-        
+
         qty_latest1=np.array(qty_array).reshape(1,1)
         print qty_latest1
         #print days_test
@@ -103,8 +110,8 @@ for index in range(1, len(all_lines)):
         #print('Coefficients: \n', regr.coef_)
         prediction=regr.predict(float(qty_latest))
         #print prediction
-        
-        
+
+
         with open("data/processed_data.txt","a") as write_file:
             write_file.write("\n")
             write_file.write("1")
@@ -116,19 +123,19 @@ for index in range(1, len(all_lines)):
             write_file.write('%d' % int(prediction))
             write_file.write("|")
             write_file.write(arrow.now().format('YYYY-MM-DD'))
-            
+
     #condition runs for the same product with different bill date
     if(product_name==product_name_next):
         if(prev!=j and index!=1):
             del days_array[:]
             del products_array[:]
-        prev=j;   
+        prev=j;
         d=days_between(next_date,previous_date)
         #print d
         days_array.append(d)
         products_array.append(qty)
-        
-        #condition runs when list of one product ends and the other starts 
+
+        #condition runs when list of one product ends and the other starts
     elif(product_name != product_name_next):
         qty_array=[]
         days=np.array(days_array);
@@ -138,7 +145,7 @@ for index in range(1, len(all_lines)):
         qty_array.append(qty)
         qty_latest1=np.array(qty_array).reshape(1,1)
         print qty_latest1
-        
+
         # Create linear regression object
         regr = linear_model.LinearRegression()
 
@@ -149,7 +156,7 @@ for index in range(1, len(all_lines)):
         #print('Coefficients: \n', regr.coef_)
         prediction=regr.predict(float(qty_latest1))
         #print prediction
-        
+
         with open("data/processed_data.txt","a") as write_file:
             write_file.write("\n")
             write_file.write("1")
@@ -161,7 +168,7 @@ for index in range(1, len(all_lines)):
             write_file.write('%d' % int(prediction))
             write_file.write("|")
             write_file.write(arrow.now().format('YYYY-MM-DD'))
-        
+
         # The mean squared error
        # print("Mean squared error: %.2f"
         #         % np.mean((regr.predict(product_qty_test) - days_test) ** 2))
@@ -174,11 +181,6 @@ for index in range(1, len(all_lines)):
         #plt.xticks(())
         #plt.yticks(())
         #plt.show()
-                       
-
-
-# In[ ]:
-
 
 
 
@@ -201,3 +203,5 @@ for index in range(1, len(all_lines)):
 
 
 
+
+# In[ ]:

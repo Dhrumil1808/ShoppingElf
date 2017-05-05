@@ -4,7 +4,7 @@ import shlex
 import ReceiptService as receiptService;
 from Models import BillReceipt
 from Models import BillItem
-
+from Models import User
 
 
 class ImageProcessor:
@@ -69,11 +69,15 @@ class ImageProcessor:
 
 		#create bill receipt_data
 
+		user = receiptService.findUser(self.username)
+		products = [];
 		for k, v in dic.items():
 			print v
 			billItem = BillItem (k,float(v));
+			products.append(k);
 			items.append(billItem);
-		billReceipt = BillReceipt (self.username,items,self.billDate);
+		billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
 		receiptService.addUserReciept(billReceipt);
+		receiptService.addProducts(products);
 
 		return dic

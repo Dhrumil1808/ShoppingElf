@@ -2,6 +2,7 @@ from pcluster import pcluster
 from Models import UserData
 from Models import ProductData
 from Models import Data
+import uregression as uregression
 
 optimal_data =2
 
@@ -14,6 +15,8 @@ def calculate(allData,allProductData,allProducts):
             if(userProductData.length > optimal_data):
 
                 // call first use case and save processed Data
+
+                uregression.estimate_days(userProductData);
 
             else:
                  // get product cluster and all products of that cluster
