@@ -1,0 +1,10 @@
+pip install numpy
+pip install -U scikit-learn
+pip install tensorflow
+pip install flask
+pip install pandas
+sudo pip install scipy
+pandas
+mpld3
+>>> import nltk
+>>> nltk.download()

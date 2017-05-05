@@ -16,8 +16,7 @@ def process_text(text, stem=True):
 
     if stem:
         stemmer = PorterStemmer()
-        tokens = [stemmer.stem(t) for t in tokens]
-
+        tokens = [stemmer.stem(t.lower()) for t in tokens]
     return tokens
 
 
@@ -32,11 +31,11 @@ def cluster_texts(texts, clusters=3):
     tfidf_model = vectorizer.fit_transform(texts)
     km_model = KMeans()
     km_model.fit(tfidf_model)
-    pred= vectorizer.fit_transform(["bread","whole-wheat","help","oats","pita"])
-    print pred
-    out = km_model.predict(pred)
-    print "ssssss";
-    print out;
+    #pred= vectorizer.fit_transform(["bread","whole-wheat","help","oats","pita"])
+    #print pred
+    #out = km_model.predict(pred)
+    #print "ssssss";
+    #print out;
 
     clustering = collections.defaultdict(list)
 
@@ -54,7 +53,7 @@ if __name__ == "__main__":
     for i in lines:
         #print i
         articles.append(i)
-    clusters = cluster_texts(articles, 7)
+    clusters = cluster_texts(articles, 10)
     pprint(dict(clusters))
 
     for c in clusters:
