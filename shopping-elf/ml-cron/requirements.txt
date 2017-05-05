@@ -6,5 +6,6 @@ pip install pandas
 sudo pip install scipy
 pandas
 mpld3
+pip install spark
 >>> import nltk
 >>> nltk.download()

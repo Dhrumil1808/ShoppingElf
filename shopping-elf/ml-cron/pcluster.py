@@ -20,6 +20,19 @@ def process_text(text, stem=True):
     return tokens
 
 
+def find_all_products(allProducts,allClusters,product):
+        productsInCluster =[];
+        index = allProducts.index(product);
+        for c in allClusters:
+            eachClusterProducts =clusters[c]
+            if index in eachClusterProducts:
+                output = eachClusterProducts
+
+        for eachIndex in output:
+            productsInCluster.append(allProducts[eachIndex])
+
+        return productsInCluster
+
 def cluster_texts(texts, clusters=3):
     """ Transform texts to Tf-Idf coordinates and cluster texts using K-Means """
     vectorizer = TfidfVectorizer(tokenizer=process_text,
@@ -59,7 +72,12 @@ if __name__ == "__main__":
     for c in clusters:
         #print clusters[c]
         print "cluster-----****"
+        print  c
         a =clusters[c]
         for p in a:
             #print p
             print articles[p]
+
+
+    products = find_all_products(articles,clusters,"PURPLE SWEET POTATO")
+    print products

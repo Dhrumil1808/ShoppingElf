@@ -1,0 +1,2 @@
+brew services stop cassandra
+ brew services start cassandra
