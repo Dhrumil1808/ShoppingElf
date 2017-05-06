@@ -18,6 +18,19 @@ class ProductData:
         self.quantity = quantity;
         self.billDate= billDate;
 
+
+class ClusterProductData:
+    productName= "";
+    quantity="";
+    billDate = None;
+    family_members=None
+    def __init__(self,productName, quantity, billDate):
+        self.productName=productName
+        self.quantity = quantity;
+        self.billDate= billDate;
+        self.family_members=family_members;
+
+
 class Data:
     userData = [];
     def __init__(self,userData):

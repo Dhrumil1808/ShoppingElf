@@ -2,7 +2,7 @@
 
 """
     Starter code for the regression mini-project.
-    
+
     Loads up/formats a modified version of the dataset
     (why modified?  we've removed some trouble points
     that you'll find yourself in the outliers mini-project).
@@ -10,7 +10,7 @@
     Draws a little scatterplot of the training/testing data
 
     You fill in the regression code where indicated:
-"""    
+"""
 import sys
 import pickle
 import numpy as np
@@ -19,7 +19,9 @@ sys.path.append("../tools/")
 #from feature_format import featureFormat, targetFeatureSplit
 #dictionary = pickle.load( open("data/sample.txt", "r") )
 
-### list the features you want to look at--first item in the 
+def estimate_days(productData):
+    
+### list the features you want to look at--first item in the
 ### list will be the "target" feature
 #features_list = ["category","quantity", "persons"]
 #data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
@@ -40,7 +42,7 @@ for i in range(0,(int)(len(all_lines) * 0.75)):
 	features_list.append([product_qty[i],number_of_people[i]])
 
 for j in range(0,(int)(len(all_lines) * 0.75)):
-	target.append([number_of_days[j]])	
+	target.append([number_of_days[j]])
 
 
 feature_train=np.array(features_list).astype(np.float)
@@ -61,7 +63,7 @@ for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
 	feature_test.append([product_qty[i],number_of_people[i]])
 
 for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
-	target_test.append([number_of_days[i]])	
+	target_test.append([number_of_days[i]])
 
 
 #from sklearn.cross_validation import train_test_split
@@ -84,7 +86,7 @@ print target_test
     #results = sm.OLS(y, X).fit()
     #return results
 ### Your regression goes here!
-### Please name it reg, so that the plotting code below picks it up and 
+### Please name it reg, so that the plotting code below picks it up and
 ### plots it correctly. Don't forget to change the test_color above from "b" to
 ### "r" to differentiate training points from test points.
 
@@ -120,9 +122,9 @@ feature_train_scatter=np.array(feature_train).ravel()
 
 import matplotlib.pyplot as plt
 for feature, target in zip(feature_test_scatter,target_test):
-    plt.scatter(feature,target,color="r") 
+    plt.scatter(feature,target,color="r")
 for feature, target in zip(feature_train_scatter, target_train):
-    plt.scatter(feature,target,color="b") 
+    plt.scatter(feature,target,color="b")
 
 ### labels for the legend
 plt.scatter(feature_test_scatter[0], target_test[0], color="r", label="test")
@@ -135,7 +137,7 @@ try:
 except NameError:
     pass
 #print reg.coef_
-plt.plot(feature_train, reg.predict(feature_train)) 
+plt.plot(feature_train, reg.predict(feature_train))
 plt.xlabel("")
 plt.ylabel("")
 plt.legend()
