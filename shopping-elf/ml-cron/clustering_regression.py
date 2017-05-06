@@ -36,14 +36,11 @@ def days_between(d1, d2):
     d2 = datetime.strptime(d2, "%m-%d-%Y")
     return abs((d2 - d1).days)
 
-productData=[['A','2','01-25-2017','3'],['A','12','01-28-2017','3'],['A','12','01-28-2017','3'],['A','5','02-15-2017','3'],['A','10','02-28-2017','3'],['A','1','03-05-2017','3'],['A','6','03-06-2017','3'],['A','10','03-16-2017','3'],['A','3','04-01-2017','1'],['A','8','04-03-2017','2'],['A','5','04-08-2017','4']]
+#productData=[['A','2','01-25-2017','3'],['A','12','01-28-2017','3'],['A','12','01-28-2017','3'],['A','5','02-15-2017','3'],['A','10','02-28-2017','3'],['A','1','03-05-2017','3'],['A','6','03-06-2017','3'],['A','10','03-16-2017','3'],['A','3','04-01-2017','1'],['A','8','04-03-2017','2'],['A','5','04-08-2017','4']]
 
 ### list the features you want to look at--first item in the 
-=======
-def estimate_days(productData):
     
 ### list the features you want to look at--first item in the
->>>>>>> 124e7069c7ab5c40da2877ca2198ebcb46683d8c
 ### list will be the "target" feature
 #features_list = ["category","quantity", "persons"]
 #data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
@@ -91,8 +88,8 @@ def estimate_days(productData):
     return result
 
 
-output=estimate_days(productData)
-print map(int,output)
+#output=estimate_days(productData)
+#print map(int,output)
 
 
 def old_regression():
