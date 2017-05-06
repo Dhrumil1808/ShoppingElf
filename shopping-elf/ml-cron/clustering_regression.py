@@ -109,13 +109,11 @@ def old_regression():
     for i in range(0,(int)(len(all_lines) * 0.75)):
 	   features_list.append([product_qty[i],number_of_people[i]])
 
-<<<<<<< HEAD
+
     for j in range(0,(int)(len(all_lines) * 0.75)):
 	   target.append([number_of_days[j]])	
-=======
-for j in range(0,(int)(len(all_lines) * 0.75)):
-	target.append([number_of_days[j]])
->>>>>>> 124e7069c7ab5c40da2877ca2198ebcb46683d8c
+    for j in range(0,(int)(len(all_lines) * 0.75)):
+	   target.append([number_of_days[j]])
 
 
     feature_train=np.array(features_list).astype(np.float)
@@ -135,13 +133,11 @@ for j in range(0,(int)(len(all_lines) * 0.75)):
     for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
 	   feature_test.append([product_qty[i],number_of_people[i]])
 
-<<<<<<< HEAD
     for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
 	   target_test.append([number_of_days[i]])	
-=======
-for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
-	target_test.append([number_of_days[i]])
->>>>>>> 124e7069c7ab5c40da2877ca2198ebcb46683d8c
+
+    for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
+	   target_test.append([number_of_days[i]])
 
 
 #from sklearn.cross_validation import train_test_split
@@ -197,18 +193,15 @@ for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
     feature_test_scatter=np.array(feature_test).ravel()
     feature_train_scatter=np.array(feature_train).ravel()
 
-<<<<<<< HEAD
     for feature, target in zip(feature_test_scatter,target_test):
         plt.scatter(feature,target,color="r") 
     for feature, target in zip(feature_train_scatter, target_train):
         plt.scatter(feature,target,color="b") 
-=======
-import matplotlib.pyplot as plt
-for feature, target in zip(feature_test_scatter,target_test):
-    plt.scatter(feature,target,color="r")
-for feature, target in zip(feature_train_scatter, target_train):
-    plt.scatter(feature,target,color="b")
->>>>>>> 124e7069c7ab5c40da2877ca2198ebcb46683d8c
+
+    for feature, target in zip(feature_test_scatter,target_test):
+        plt.scatter(feature,target,color="r")
+    for feature, target in zip(feature_train_scatter, target_train):
+        plt.scatter(feature,target,color="b")
 
 ### labels for the legend
     plt.scatter(feature_test_scatter[0], target_test[0], color="r", label="test")
@@ -221,16 +214,8 @@ for feature, target in zip(feature_train_scatter, target_train):
     except NameError:
         pass
 #print reg.coef_
-<<<<<<< HEAD
     plt.plot(feature_train, reg.predict(feature_train)) 
     plt.xlabel("")
     plt.ylabel("")
     plt.legend()
     plt.show()
-=======
-plt.plot(feature_train, reg.predict(feature_train))
-plt.xlabel("")
-plt.ylabel("")
-plt.legend()
-plt.show()
->>>>>>> 124e7069c7ab5c40da2877ca2198ebcb46683d8c
