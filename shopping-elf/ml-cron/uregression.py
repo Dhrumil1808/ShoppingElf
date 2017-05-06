@@ -28,7 +28,7 @@
 
 # In[5]:
 
-print(__doc__)
+#print(__doc__)
 # Code source: Jaques Grobler
 # License: BSD 3 clause
 
@@ -52,77 +52,116 @@ def days_between(d1, d2):
     return abs((d2 - d1).days)
 
 
-//
+productData=[['A','2','01-25-2017'],['A','12','01-28-2017'],['A','12','01-28-2017'],['A','5','02-15-2017'],['A','10','02-28-2017'],['A','1','03-05-2017'],['A','6','03-06-2017'],['A','10','03-16-2017'],['A','3','04-01-2017'],['A','8','04-03-2017'],['A','5','04-08-2017']]
+
+
 def estimate_days(productData):
+    product_name=[]
+    quantity=[]
+    days=[]
+    product_quantity=[]
+    j = len(productData)-1 
+    #print j   
+    for i in range(0,j):
+        product_name.append(productData[i][0])
+        billDate=productData[i][2]
+        if(i != j-1):
+            billDate_next=productData[i+1][2]
+            day=days_between(billDate,billDate_next)
+            days.append(day)
+            quantity.append((float) (productData[i][1]))
 
 
-
-
-with open("data/user-product-sample.txt","r") as text_file:
-    all_lines = text_file.read().split("\n")
-
-lines= [line.split("|") for line in all_lines if ((len(line.split("|"))==3) and (line.split("|")[2]<> ''))]
-
-product_qty_array= [(float(line[2])) for line in lines]
-
-#print len(product_qty);
-#print len(all_lines)
-product_name_array=[line[0] for line in lines]
-product_name_test=product_name_array.pop(len(product_name_array)-1)
-
-output=[]
-#print len(all_lines)
-i=1;
-days_array=[]
-products_array=[]
-j=0;
-prev=0;
-print len(all_lines)
-for index in range(1, len(all_lines)):
-    product_name=all_lines[index-1].split("|")[0]
-    product_name_next=all_lines[index].split("|")[0]
-    previous_date= all_lines[index-1].split("|")[1]
-    next_date=all_lines[index].split("|")[1]
-    qty= float(all_lines[index-1].split("|")[2])
-    qty_latest=float(all_lines[index].split("|")[2])
-
-    #condition runs for the last entry in the database
-    if(index==len(all_lines)-1):
-        qty_array=[]
-        days=np.array(days_array);
-        products=np.array(products_array).reshape(len(products_array),1)
-        #print days
-        days_test=np.array(random.sample(range(1,30),len(days_array)-1))
-
-        #print days_test
-        qty_array.append(qty_latest)
-
-        qty_latest1=np.array(qty_array).reshape(1,1)
-        print qty_latest1
-        #print days_test
-        # Create linear regression object
-        regr = linear_model.LinearRegression()
-
-        # Train the model using the training sets
-        regr.fit(products, days)
 
         # The coefficients
         #print('Coefficients: \n', regr.coef_)
-        prediction=regr.predict(float(qty_latest))
+    quantity=np.array(quantity).reshape(len(quantity),1)
+    days=np.array(days).reshape(len(days),1)
+
+    regr = linear_model.LinearRegression()
+
+        # Train the model using the training sets
+    regr.fit(quantity, days)
+
+    for i in  range(j,len(productData)):
+        product_quantity.append((float)(productData[i][1]))
+
+    product_quantity=np.array(product_quantity).reshape(len(product_quantity),1)
+    result=regr.predict(product_quantity)
+    return result
+
+
+output=estimate_days(productData)
+print map(int,output)
+
+
+
+def old_regression():
+    with open("data/user-product-sample.txt","r") as text_file:
+        all_lines = text_file.read().split("\n")
+
+    lines= [line.split("|") for line in all_lines if ((len(line.split("|"))==3) and (line.split("|")[2]<> ''))]
+
+    product_qty_array= [(float(line[2])) for line in lines]
+
+    #print len(product_qty);
+    #print len(all_lines)
+    product_name_array=[line[0] for line in lines]
+    product_name_test=product_name_array.pop(len(product_name_array)-1)
+
+    output=[]
+    #print len(all_lines)
+    i=1;
+    days_array=[]
+    products_array=[]
+    j=0;
+    prev=0;
+    print len(all_lines)
+    for index in range(1, len(all_lines)):
+        product_name=all_lines[index-1].split("|")[0]
+        product_name_next=all_lines[index].split("|")[0]
+        previous_date= all_lines[index-1].split("|")[1]
+        next_date=all_lines[index].split("|")[1]
+        qty= float(all_lines[index-1].split("|")[2])
+        qty_latest=float(all_lines[index].split("|")[2])
+
+    #condition runs for the last entry in the database
+        if(index==len(all_lines)-1):
+            qty_array=[]
+            days=np.array(days_array);
+            products=np.array(products_array).reshape(len(products_array),1)
+        #print days
+            days_test=np.array(random.sample(range(1,30),len(days_array)-1))
+
+        #print days_test
+            qty_array.append(qty_latest)
+
+            qty_latest1=np.array(qty_array).reshape(1,1)
+            print qty_latest1
+        #print days_test
+        # Create linear regression object
+            regr = linear_model.LinearRegression()
+
+        # Train the model using the training sets
+            regr.fit(products, days)
+
+        # The coefficients
+        #print('Coefficients: \n', regr.coef_)
+            prediction=regr.predict(float(qty_latest))
         #print prediction
 
 
-        with open("data/processed_data.txt","a") as write_file:
-            write_file.write("\n")
-            write_file.write("1")
-            write_file.write("|")
-            write_file.write(product_name)
-            write_file.write("|")
-            write_file.write(next_date)
-            write_file.write("|")
-            write_file.write('%d' % int(prediction))
-            write_file.write("|")
-            write_file.write(arrow.now().format('YYYY-MM-DD'))
+            with open("data/processed_data.txt","a") as write_file:
+                write_file.write("\n")
+                write_file.write("1")
+                write_file.write("|")
+                write_file.write(product_name)
+                write_file.write("|")
+                write_file.write(next_date)
+                write_file.write("|")
+                write_file.write('%d' % int(prediction))
+                write_file.write("|")
+                write_file.write(arrow.now().format('YYYY-MM-DD'))
 
     #condition runs for the same product with different bill date
     if(product_name==product_name_next):
@@ -205,3 +244,5 @@ for index in range(1, len(all_lines)):
 
 
 # In[ ]:
+
+
