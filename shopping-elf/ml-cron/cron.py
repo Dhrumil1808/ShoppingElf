@@ -32,7 +32,7 @@ def calculate(allData,allProducts):
                     last_bill = userProductData[len(userProductData)-1]
                     #days = 1;
                     processedData.append(ProcessedData(user,product, last_bill.quantity, last_bill.billDate,last_bill.family_members,days))
-            #else:
+                else:
                  # get product cluster and all products of that cluster
                  #nhuserData =  UserData(eachUserData.userId, userProductData);
                  #noHistoryData.append(nhuserData);
