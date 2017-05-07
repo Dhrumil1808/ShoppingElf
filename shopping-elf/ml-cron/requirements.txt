@@ -7,5 +7,7 @@ sudo pip install scipy
 pandas
 mpld3
 pip install spark
+pip install matplotlib
+sudo pip install arrow
 >>> import nltk
 >>> nltk.download()

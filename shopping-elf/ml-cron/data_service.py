@@ -40,8 +40,10 @@ def fetchAllUserReciepts():
                 productdata[user_row.product_name] =productBillData
         else:
             productdata ={}
-            productdata[user_row.product_name]= ProductTuple(user_row.qty,
-            user_row.bill_date,user_row.family_members)
+            tuplelist=[]
+            tuplelist.append(ProductTuple(user_row.qty,
+            user_row.bill_date,user_row.family_members));
+            productdata[user_row.product_name]=tuplelist;
             user[user_row.userid]= productdata;
     print user
     return user

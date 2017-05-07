@@ -47,32 +47,36 @@ db = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      db="shopping")        # name of the data base
 
 def days_between(d1, d2):
-    d1 = datetime.strptime(d1, "%m-%d-%Y")
-    d2 = datetime.strptime(d2, "%m-%d-%Y")
+    #d1 = datetime.strptime(d1, "%m-%d-%Y")
+    #d2 = datetime.strptime(d2, "%m-%d-%Y")
+    d1 = datetime.strptime(d1, "%Y-%m-%d")
+    d2 = datetime.strptime(d2, "%Y-%m-%d")
     return abs((d2 - d1).days)
 
 
 #productData=[['A','2','01-25-2017'],['A','12','01-28-2017'],['A','12','01-28-2017'],['A','5','02-15-2017'],['A','10','02-28-2017'],['A','1','03-05-2017'],['A','6','03-06-2017'],['A','10','03-16-2017'],['A','3','04-01-2017'],['A','8','04-03-2017'],['A','5','04-08-2017']]
 
 
-def estimate_days(productData):
+def estimate_days(productData, name):
     product_name=[]
     quantity=[]
     days=[]
     product_quantity=[]
-    j = len(productData)-1 
-    #print j   
+    j = len(productData)-1
+    #print j
+    print productData[1]
     for i in range(0,j):
-        product_name.append(productData[i][0])
-        billDate=productData[i][2]
+        product_name.append(name)
+        billDate=productData[i].billDate
         if(i != j-1):
-            billDate_next=productData[i+1][2]
-            day=days_between(billDate,billDate_next)
+            billDate_next=productData[i+1].billDate
+            print billDate_next
+            day=days_between(str(billDate),str(billDate_next))
             days.append(day)
-            quantity.append((float) (productData[i][1]))
+            quantity.append((float) (productData[i].quantity))
 
 
-
+    print days
         # The coefficients
         #print('Coefficients: \n', regr.coef_)
     quantity=np.array(quantity).reshape(len(quantity),1)
@@ -84,11 +88,16 @@ def estimate_days(productData):
     regr.fit(quantity, days)
 
     for i in  range(j,len(productData)):
-        product_quantity.append((float)(productData[i][1]))
+        product_quantity.append((float)(productData[i].quantity))
 
     product_quantity=np.array(product_quantity).reshape(len(product_quantity),1)
     result=regr.predict(product_quantity)
-    return result
+    esitmated_days =0;
+    for it in result:
+        for val in it:
+            esitmated_days =  int(val)
+
+    return esitmated_days
 
 
 #output=estimate_days(productData)
@@ -244,5 +253,3 @@ def old_regression():
 
 
 # In[ ]:
-
-

@@ -30,7 +30,6 @@ sys.path.append("../tools/")
 #from feature_format import featureFormat, targetFeatureSplit
 #dictionary = pickle.load( open("data/sample.txt", "r") )
 
-<<<<<<< HEAD
 def days_between(d1, d2):
     d1 = datetime.strptime(d1, "%m-%d-%Y")
     d2 = datetime.strptime(d2, "%m-%d-%Y")
@@ -38,8 +37,8 @@ def days_between(d1, d2):
 
 #productData=[['A','2','01-25-2017','3'],['A','12','01-28-2017','3'],['A','12','01-28-2017','3'],['A','5','02-15-2017','3'],['A','10','02-28-2017','3'],['A','1','03-05-2017','3'],['A','6','03-06-2017','3'],['A','10','03-16-2017','3'],['A','3','04-01-2017','1'],['A','8','04-03-2017','2'],['A','5','04-08-2017','4']]
 
-### list the features you want to look at--first item in the 
-    
+### list the features you want to look at--first item in the
+
 ### list the features you want to look at--first item in the
 ### list will be the "target" feature
 #features_list = ["category","quantity", "persons"]
@@ -53,8 +52,8 @@ def estimate_days(productData):
     number_of_people=[]
     features_list=[]
 
-    j = len(productData)-1 
-    #print j   
+    j = len(productData)-1
+    #print j
     for i in range(0,j):
         product_name.append(productData[i][0])
         billDate=productData[i][2]
@@ -83,7 +82,7 @@ def estimate_days(productData):
     for i in  range(j,len(productData)):
         product_quantity_people.append([(float)(productData[i][1]),(float)(productData[i][3])])
 
-    
+
     result=regr.predict(product_quantity_people)
     return result
 
@@ -111,7 +110,7 @@ def old_regression():
 
 
     for j in range(0,(int)(len(all_lines) * 0.75)):
-	   target.append([number_of_days[j]])	
+	   target.append([number_of_days[j]])
     for j in range(0,(int)(len(all_lines) * 0.75)):
 	   target.append([number_of_days[j]])
 
@@ -134,7 +133,7 @@ def old_regression():
 	   feature_test.append([product_qty[i],number_of_people[i]])
 
     for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
-	   target_test.append([number_of_days[i]])	
+	   target_test.append([number_of_days[i]])
 
     for i in range((int)((len(all_lines)*0.75)),len(all_lines)-1):
 	   target_test.append([number_of_days[i]])
@@ -194,9 +193,9 @@ def old_regression():
     feature_train_scatter=np.array(feature_train).ravel()
 
     for feature, target in zip(feature_test_scatter,target_test):
-        plt.scatter(feature,target,color="r") 
+        plt.scatter(feature,target,color="r")
     for feature, target in zip(feature_train_scatter, target_train):
-        plt.scatter(feature,target,color="b") 
+        plt.scatter(feature,target,color="b")
 
     for feature, target in zip(feature_test_scatter,target_test):
         plt.scatter(feature,target,color="r")
@@ -214,7 +213,7 @@ def old_regression():
     except NameError:
         pass
 #print reg.coef_
-    plt.plot(feature_train, reg.predict(feature_train)) 
+    plt.plot(feature_train, reg.predict(feature_train))
     plt.xlabel("")
     plt.ylabel("")
     plt.legend()

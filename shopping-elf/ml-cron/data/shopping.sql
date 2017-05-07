@@ -23,12 +23,13 @@ DROP TABLE IF EXISTS `inventory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inventory` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) DEFAULT NULL,
   `product_name` varchar(255) DEFAULT NULL,
   `invoice_date` date DEFAULT NULL,
   `days` int(11) DEFAULT NULL,
-  `cron_date` date DEFAULT NULL,
+  `family_members` int(11) DEFAULT NULL,
+  `cron_date` DATETIME DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

@@ -40,7 +40,6 @@ def cluster_texts(texts, clusters=3):
                                  max_df=0.5,
                                  min_df=0.1,
                                  lowercase=True)
-    print articles;
     tfidf_model = vectorizer.fit_transform(texts)
     km_model = KMeans()
     km_model.fit(tfidf_model)
@@ -54,7 +53,8 @@ def cluster_texts(texts, clusters=3):
     return clustering
 
 
-if __name__ == "__main__":
+
+def testclustering():
     articles = []
     with open("data/product-data.txt","r") as text_file:
         lines = text_file.read().split("\n")

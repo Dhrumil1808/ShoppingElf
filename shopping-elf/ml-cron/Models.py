@@ -35,13 +35,15 @@ class ProcessedData:
     productName= "";
     quantity="";
     billDate = None;
+    estimate_days = None;
     family_members=None
-    def __init__(self,userId,productName, quantity, billDate,family_members):
+    def __init__(self,userId,productName, quantity, billDate,family_members,estimate_days):
         self.userId=userId
         self.productName=productName
         self.quantity = quantity;
         self.billDate= billDate;
         self.family_members=family_members;
+        self.estimate_days=estimate_days;
 
 
 

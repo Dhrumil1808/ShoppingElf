@@ -70,6 +70,7 @@ class ImageProcessor:
 		#create bill receipt_data
 
 		user = receiptService.findUser(self.username)
+		print user
 		products = [];
 		for k, v in dic.items():
 			print v

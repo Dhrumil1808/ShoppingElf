@@ -49,7 +49,6 @@ def findUser(username):
 
 
 def testAdd():
-
     billItem = BillItem ("sample_product",10);
     items =[];
     items.append(billItem);
