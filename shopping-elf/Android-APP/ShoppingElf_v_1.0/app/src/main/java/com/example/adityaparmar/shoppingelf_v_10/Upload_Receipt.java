@@ -36,6 +36,7 @@ public class Upload_Receipt extends AppCompatActivity {
     int b_day,b_month,b_year;
     static final int Dialog_ID=55;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +44,13 @@ public class Upload_Receipt extends AppCompatActivity {
 
         mPhotoCapturedImageView = (ImageView) findViewById(R.id.capturePhotoImageView);
 
+        //Back Button
+
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //open camera
 
-        takePhoto();
+        //takePhoto();
 
         // select Date Event
         ibCalender = (ImageButton)findViewById(R.id.ibcalender);

@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,26 +33,10 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    public void Opencamera(View view)
-    {
-
-
-        if(true){
-
-            Intent i = new Intent(this,Upload_Receipt.class);
-            startActivity(i);
-
-
-        }else{
 
 
 
 
-        }
-
-
-
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,10 +56,20 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
+        // Bucket coding here
+
+
+
 
     }
 
 
+
+    public void Opencamera(View view)
+    {
+        Intent i = new Intent(this,Upload_Receipt.class);
+        startActivity(i);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -101,19 +97,15 @@ public class MainActivity extends AppCompatActivity {
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
+
+
+
         private static final String ARG_SECTION_NUMBER = "section_number";
 
         public PlaceholderFragment() {
         }
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
+
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -126,15 +118,31 @@ public class MainActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_receipt, container, false);
+
            // TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+
+
             switch (getArguments().getInt(ARG_SECTION_NUMBER))
             {
                 case 1: {
                     rootView = inflater.inflate(R.layout.fragment_receipt, container, false);
+
+
+
                     break;
                 }
                 case 2: {
-                    //rootView = inflater.inflate(R.layout.fragment_bucket, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_shopping_card, container, false);
+                    RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rc_grocery_card);
+                    rv.setHasFixedSize(true);
+                    String[] data = new String[]{"test one", "test two", "test three", "test four", "test five" , "test six" , "test seven"};
+
+                    MyAdapter adapter = new MyAdapter(data);
+
+                    rv.setAdapter(adapter);
+
+                    LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+                    rv.setLayoutManager(llm);
                     break;
                 }
 
@@ -142,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
             }
             return rootView;
         }
+
+
     }
 
     /**
@@ -181,3 +191,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+/*
+
+    References: http://stackoverflow.com/questions/34579614/how-to-implement-recyclerview-with-cardview-rows-in-a-fragment-with-tablayout
+
+ */
