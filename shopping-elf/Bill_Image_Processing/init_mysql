@@ -1,0 +1,30 @@
+To save processed image data into mysql database :
+
+create database shopping_elf;
+
+CREATE TABLE shopping_elf.receipt_data (
+    userid varchar(40),
+    product_name varchar(40),
+    bill_date date,
+    qty double,
+    time date,
+    family_members int,
+    PRIMARY KEY (userid, product_name, bill_date)
+);
+
+
+CREATE TABLE shopping_elf.products (
+    product_name varchar(40),
+    PRIMARY KEY (product_name)
+);
+
+
+CREATE TABLE shopping_elf.user (
+    userid varchar(40),
+    family_members int,
+    username varchar(40),
+    PRIMARY KEY (username)
+);
+
+insert into shopping_elf.user (userid,family_members,username) values ('1',2,'rash');
+
