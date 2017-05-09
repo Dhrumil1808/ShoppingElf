@@ -1,11 +1,12 @@
 import subprocess
 import re
 import shlex
+import re
+import ast
 import ReceiptService as receiptService;
 from Models import BillReceipt
 from Models import BillItem
 from Models import User
-
 
 class ImageProcessor:
 	username = None
@@ -30,55 +31,64 @@ class ImageProcessor:
 		del groupBynewLine[0]
 		del groupBynewLine[0]
 
-		dic1 = {}
-		dic2 = {}
+		dict1 = {}
+		dict2 = {}
 		counter = 0
 		for i in groupBynewLine:
 			if not re.search(r"(\d+)", i):
-				dic1[counter]=i
+				dict1[counter]=i
 			else:
-				dic2[counter-1]=i
-			print i
+				dict2[counter-1]=i
+			# print i
 			counter+=1
 
 		# print '1111111'
-		# print dic1
+		# print dict1
 		# print '2222222'
-		# print dic2
+		# print dict2
 
-		dic = {}
-		for i,j in dic1.items():
-			dic[j]=1
-			for p,q in dic2.items():
+		dc = {}
+		for i,j in dict1.items():
+			dc[j]=1
+			for p,q in dict2.items():
 				if i==p:
-					dic[j]=q
+					dc[j]=q
 
 		discardWords = ['PRODUCE','DAIRY','']
-		for p1,q1 in dic.items():
+		for p1,q1 in dc.items():
 			if p1 in discardWords:
-				del dic[p1]
+				del dc[p1]
 		# print '3333333'
-		# print dic
+		# print dc
 
-		for i1,j1 in dic.items():
+		for i1,j1 in dc.items():
 			if isinstance(j1, int):
-				dic[i1]=j1
+				dc[i1]=j1
 			else:
 				k1=shlex.split(j1)[0]
-				dic[i1]=k1
+				dc[i1]=k1
 
 		#create bill receipt_data
-
 		user = receiptService.findUser(self.username)
 		print user
 		products = [];
-		for k, v in dic.items():
+		for k, v in dc.items():
 			print v
 			billItem = BillItem (k,float(v));
 			products.append(k);
+			if v=='':
+				v='1'
+			v1 = re.sub("\D", "", str(v))
+			# print "v1:"
+			# print v1
+			# print "v:"
+			# print v
+			#v1 = ast.literal_eval(v)
+			#v = filter(lambda x: x.isdigit(), v)
+			# billItem = BillItem (k,float(v1));
 			items.append(billItem);
 		billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
 		receiptService.addUserReciept(billReceipt);
 		receiptService.addProducts(products);
 
-		return dic
+		return dc

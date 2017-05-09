@@ -4,10 +4,7 @@ from Models import BillReceipt
 from Models import BillItem
 from Models import User
 import mysql.connector
-
-# cluster = Cluster()
-# session = cluster.connect('shopping_elf')
-database=None
+import DbConstants
 
 def addUserReciept(billReceipt):
     bill_date= billReceipt.billDate;
@@ -17,57 +14,67 @@ def addUserReciept(billReceipt):
     print family_members
     currentDate= strftime("%Y-%m-%d", gmtime())
     
-    self.database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
-    cursor = self.database.cursor()
+    database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
+    cursor = database.cursor()
     for eachItem in billReceipt.billItems:
         query = """INSERT INTO receipt_data (userid,bill_date,qty,time, product_name, family_members) VALUES (%s,%s,%s,%s,%s,%s)"""
-        cursor.execute(query, (self.user_id,self.bill_date, self.qty, self.time, self.product_name, self.family_members))
-        self.database.commit()
+        cursor.execute(query, (user_id,bill_date, eachItem.quantity, currentDate, eachItem.productName, family_members))
+        database.commit()
         cursor.close()
-        self.database.close()
-        return result
+        database.close()
+        return "successful insert"
 
 def addProducts(products):
-    self.database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
-    cursor = self.database.cursor()
+    database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
+    cursor = database.cursor()
 
     for eachProduct in products:
         query = """INSERT INTO products (product_name) VALUES (%s)"""
-        cursor.execute(query, (self.eachProduct))
-        self.database.commit()
+        cursor.execute(query, (eachProduct,))
+        database.commit()
         cursor.close()
-        self.database.close()
-        return result
+        database.close()
+        return "successful insert"
 
 def fetchAllReciepts(userId):
-    self.database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
-    cursor = self.database.cursor()
+    database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
+    cursor = database.cursor()
     try:
         query = """SELECT product_name,bill_date,qty FROM receipt_data where userid = %s order by product_name,bill_date asc"""
-        cursor.execute(query,(self.userid))
+        cursor.execute(query,(userid))
         rows = cursor.fetchall()
     except mysql.connector.Error as err:
         cursor.close()
-        self.database.close()
+        database.close()
         return "err"
     for user_row in rows:
         print user_row.bill_date, user_row.product_name, user_row.qty
 
 def findUser(username):
-    self.database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
-    cursor = self.database.cursor()
+    database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
+    cursor = database.cursor()
     try:
-        query = """SELECT userid,family_members,username  FROM user where username= %s """
-        cursor.execute(query,(self.userid))
+        query = """SELECT userid,family_members,username FROM user where username= %s """
+        cursor.execute(query,(username,))
         rows = cursor.fetchall()
+        print rows
     except mysql.connector.Error as err:
         cursor.close()
-        self.database.close()
+        database.close()
         return "err"
     for user_row in rows:
-        user = User(user_row.userid,user_row.username,user_row.family_members);
+        userid = user_row[0]
+        username = user_row[2]
+        family_members = user_row[1]
+        user = User(userid,username,family_members);
     return user;
 
+    # for row in rows:
+    #     d = collections.OrderedDict()
+    #     d['project_id'] = row[0]
+    #     d['project_name'] = row[1]
+    #     d['project_url'] = row[2]
+    #     objects_list.append(d)
 
 def testAdd():
     billItem = BillItem ("sample_product",10);
