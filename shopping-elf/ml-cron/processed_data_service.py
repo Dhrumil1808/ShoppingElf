@@ -4,15 +4,11 @@ from sklearn import datasets, linear_model
 import time
 import random
 from datetime import datetime
-import MySQLdb
+import mysql.connector
+import DbConstants
+
 from Models import ProcessedData;
 
-
-
-db = MySQLdb.connect(host="localhost",    # your host, usually localhost
-                     user="root",         # your username
-                     passwd="root",  # your password
-                     db="shopping")        # name of the data base
 
 def days_between(d1, d2):
     d1 = datetime.strptime(d1, "%m-%d-%Y")
@@ -27,19 +23,10 @@ def days_between(d1, d2):
 # print all the first cell of all the rows
 def saveData(processedData):
 
-    #with open("data/processed_data.txt","r") as text_file:
-        #all_lines = text_file.read().split("\n")
 
-    #lines= [line.split("|") for line in all_lines if ((len(line.split("|"))==3) and (line.split("|")[2]<> ''))]
-
-
-#print len(product_qty);
-#print len(all_lines)
-    db = MySQLdb.connect(host="localhost",  # your host, usually localhost
-                         user="root",  # your username
-                         passwd="root",  # your password
-                         db="shopping")  # name of the data base
-    cur = db.cursor()
+    database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,
+                                       database=DbConstants.DATABASE)
+    cur = database.cursor()
     i=cur.rowcount;
 
     for eachData in processedData:
@@ -65,25 +52,24 @@ def saveData(processedData):
             #print len(rows_update)
             if(len(rows_update)==1):
                 invoice_date_updated = datetime.strptime(invoice_date, "%Y-%m-%d").strftime('%Y-%m-%d')
+                print invoice_date_updated
                 # print cron_date_updated
                 cur.execute("UPDATE inventory SET invoice_date='%s',days= '%s',cron_date= NOW(),quantity='%s' WHERE user_id ='%s' AND product_name='%s' " %(invoice_date_updated,days,quantity,user_id,product_name))
-                db.commit(),
+                database.commit(),
             else:
-                cur.execute("INSERT INTO `inventory`(user_id,product_name,invoice_date,days,cron_date,family_members,quantity) VALUES (%s,%s, STR_TO_DATE(%s,'%%Y-%%m-%%d'),%s,NOW(),%s,%s)", (user_id,product_name,invoice_date,days,family_members,quantity))
-                db.commit()
-        except MySQLdb.connector.Error as err:
-            print("Something went wrong: {}".format(err))
+                cur.execute("INSERT INTO `inventory`(user_id,product_name,invoice_date,days,cron_date,family_members,quantity) VALUES (%s,%s,%s,%s,NOW(),%s,%s)", (user_id,product_name,invoice_date,days,family_members,quantity))
+                database.commit()
+        except mysql.connector.Error as err:
+            print("In Data saving : Something went wrong: {}".format(err))
 
-    db.close()
+    database.close()
 
 
 
 
 def getProductData(products):
-    db = MySQLdb.connect(host="localhost",  # your host, usually localhost
-                         user="root",  # your username
-                         passwd="root",  # your password
-                         db="shopping")
+    database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,
+                                       database=DbConstants.DATABASE)
     ProductList =[]
     pdStr= "";
     size =len(products)
@@ -96,7 +82,7 @@ def getProductData(products):
 
     print pdStr
     try:
-        cur = db.cursor()
+        cur = database.cursor()
         query ="SELECT product_name,days,family_members,quantity,days FROM `inventory` WHERE  product_name in ("+pdStr+")"
         print query
         cur.execute(query);
@@ -104,7 +90,7 @@ def getProductData(products):
         for r in rows:
             ProductList.append(ProcessedData("A",r[0], r[3], "",r[2],r[4]))
 
-    except MySQLdb.connector.Error as err:
+    except mysql.connector.Error as err:
         print("Something went wrong: {}".format(err))
-        db.close()
+        database.close()
     return ProductList

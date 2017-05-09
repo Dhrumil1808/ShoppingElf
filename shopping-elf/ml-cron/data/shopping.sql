@@ -19,10 +19,10 @@
 -- Table structure for table `inventory`
 --
 
-DROP TABLE IF EXISTS `inventory`;
+DROP TABLE IF EXISTS shopping_elf.`inventory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `inventory` (
+CREATE TABLE shopping_elf.`inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(255) DEFAULT NULL,
   `product_name` varchar(255) DEFAULT NULL,

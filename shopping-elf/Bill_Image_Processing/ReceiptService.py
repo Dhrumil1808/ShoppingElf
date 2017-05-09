@@ -30,8 +30,11 @@ def addProducts(products):
 
     for eachProduct in products:
         query = """INSERT INTO products (product_name) VALUES (%s)"""
-        cursor.execute(query, (eachProduct,))
-        database.commit()
+        try:
+            cursor.execute(query, (eachProduct,))
+            database.commit();
+        except mysql.connector.Error as err:
+            print("Something went wrong: {}".format(err))
     cursor.close()
     database.close()
     return "successful insert"

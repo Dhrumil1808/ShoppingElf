@@ -10,12 +10,14 @@ import collections
 db = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      user="root",         # your username
                      passwd="root",  # your password
-                     db="shopping")        # name of the data base
+                     db="shopping_elf")        # name of the data base
 
 
 def getShoppingList(userid):
     cur = db.cursor()
-    cur.execute("SELECT product_name,invoice_date,days,quantity FROM `inventory` WHERE  user_id ='%s'  and DATE_ADD(invoice_date,INTERVAL days DAY) > DATE_ADD(NOW(),INTERVAL 2 DAY)" %(userid))
+
+
+    cur.execute("SELECT product_name,DATE_FORMAT(invoice_date,'%%d-%%m-%%Y'),days,quantity FROM `inventory` WHERE  user_id ='%s'  and DATE_ADD(invoice_date,INTERVAL days DAY) > DATE_ADD(NOW(),INTERVAL 2 DAY)" %(userid))
     rows=cur.fetchall()
     shoppingList =[]
     for each_row in rows:

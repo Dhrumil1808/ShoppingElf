@@ -27,3 +27,4 @@ CREATE TABLE shopping_elf.user (
 
 insert into shopping_elf.user (userid,family_members,username) values ('1',2,'rash');
 
+insert into shopping_elf.user (userid,family_members,username) values ('2',3,'neil');

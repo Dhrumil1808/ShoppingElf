@@ -15,10 +15,10 @@ def getShoppingList(username):
     #return  pdservice.getShoppingList(username))
 
 
-    j = json.dumps(pdservice.getShoppingList(username));
+    j = jsonify(pdservice.getShoppingList(username));
 
 
-    return Response(j,mimetype="application/json",content_type="application/json",status=200);
+    return j
 
 
 if __name__ == "__main__":
