@@ -72,6 +72,18 @@ def saveData(processedData):
 
 
 def getProductData(products):
+    pdStr= "";
+    size =len(products)
+    i=1;
+    for product in products:
+       pdStr= pdStr+ "'"+product+"'"
+       if(i!=size):
+            pdStr = pdStr +","
+       i=i+1;
+
+    print pdStr
     cur = db.cursor()
-    cur.execute("SELECT * FROM `inventory` WHERE  product_name in (%s)" %(products))
+    query ="SELECT * FROM `inventory` WHERE  product_name in ("+pdStr+")"
+    print query
+    cur.execute(query);
     rows=cur.fetchall()

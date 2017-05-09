@@ -9,27 +9,48 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from pprint import pprint
 
 
+def reduce_words (text):
+    text = text.translate(string.punctuation)
+
+
+
 def process_text(text, stem=True):
+    print text
     """ Tokenize text and stem words removing punctuation """
     text = text.translate(string.punctuation)
-    tokens = word_tokenize(text)
 
-    if stem:
-        stemmer = PorterStemmer()
-        tokens = [stemmer.stem(t.lower()) for t in tokens]
+    print text
+
+    tokens = word_tokenize(text)
+    if len(tokens)!=0:
+        if stem:
+            stemmer = PorterStemmer()
+            tokens = [stemmer.stem(t.lower()) for t in tokens]
+    else:
+        tokens=[]
+        tokens.append(text)
+    print "**********************"
+
+    print text
+
+    print tokens
+    print "**********************"
+
+
     return tokens
 
 
 def find_all_products(allProducts,allClusters,product):
         productsInCluster =[];
-        index = allProducts.index(product);
-        for c in allClusters:
-            eachClusterProducts =clusters[c]
-            if index in eachClusterProducts:
-                output = eachClusterProducts
+        if product in allProducts:
+            index = allProducts.index(product);
+            for c in allClusters:
+                eachClusterProducts =allClusters[c]
+                if index in eachClusterProducts:
+                    output = eachClusterProducts
 
-        for eachIndex in output:
-            productsInCluster.append(allProducts[eachIndex])
+            for eachIndex in output:
+                productsInCluster.append(allProducts[eachIndex])
 
         return productsInCluster
 
@@ -40,6 +61,9 @@ def cluster_texts(texts, clusters=3):
                                  max_df=0.5,
                                  min_df=0.1,
                                  lowercase=True)
+
+    print texts
+
     tfidf_model = vectorizer.fit_transform(texts)
     km_model = KMeans()
     km_model.fit(tfidf_model)
@@ -59,9 +83,13 @@ def testclustering():
     with open("data/product-data.txt","r") as text_file:
         lines = text_file.read().split("\n")
 
-    for i in lines:
+    articles =['YELLOW MANGOS', 'LARGE NAVEL ORANGES', 'CANTAIOUPE MELONS', 'CANTALOUPE MELONS', "\\'J ELLOW BANANAS", 'HALF PT BLUEBERRIES', 'I:! T T in', 'X LG HASS AVOCADOS', 'HALF RT BLUEBERRIES', 'CUCUMBERS', 'CLUSTER TOMATOES', 'YELLOW BANANAS', 'MINI HATERHELON', 'ORG STRAWBERRIES', 'REDUCED FAT MILK', 'LIMES', 'DANJOU PEARS', 'RASPBERRIES', 'PURPLE SWEET POTATO', 'X LG HASSlAggCADOS'];
+
+    #for i in lines:
         #print i
-        articles.append(i)
+        #articles.append(i)
+
+
     clusters = cluster_texts(articles, 10)
     pprint(dict(clusters))
 
@@ -77,3 +105,5 @@ def testclustering():
 
     products = find_all_products(articles,clusters,"PURPLE SWEET POTATO")
     print products
+
+testclustering()

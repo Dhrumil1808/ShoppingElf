@@ -44,7 +44,7 @@ def days_between(d1, d2):
 #features_list = ["category","quantity", "persons"]
 #data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
 #target, features = targetFeatureSplit(data)
-def estimate_days(productData):
+def estimate_days(productData,testData,product_cluster):
     product_name=[]
     quantity=[]
     days=[]
@@ -55,13 +55,13 @@ def estimate_days(productData):
     j = len(productData)-1
     #print j
     for i in range(0,j):
-        product_name.append(productData[i][0])
-        billDate=productData[i][2]
+        product_name.append(product_cluster)
+        billDate=productData[i].billDate
         if(i != j-1):
-            billDate_next=productData[i+1][2]
+            billDate_next=productData[i+1].billDate
             day=days_between(billDate,billDate_next)
             days.append(day)
-            features_list.append([(float)(productData[i][1]),(float)(productData[i][3])])
+            features_list.append([(float)(productData[i].quantity),(float)(productData[i].family_members)])
 
 
 
@@ -79,8 +79,8 @@ def estimate_days(productData):
         # Train the model using the training sets
     regr.fit(features_list, days)
 
-    for i in  range(j,len(productData)):
-        product_quantity_people.append([(float)(productData[i][1]),(float)(productData[i][3])])
+    for i in  range(j,len(testData)):
+        product_quantity_people.append([(float)(testData[i].quantity),(float)(testData[i].family_members)])
 
 
     result=regr.predict(product_quantity_people)
