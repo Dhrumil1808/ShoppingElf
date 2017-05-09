@@ -13,25 +13,6 @@ import pcluster as pcluster
 optimal_data =2
 
 
-def save():
-    if(user_row.userid in user):
-        productdata = user[user_row.userid];
-        if(user_row.product_name in productdata):
-            eachProductBillData = productdata[user_row.product_name]
-            eachProductBillData.append(ProductTuple(user_row.qty,
-            user_row.bill_date,user_row.family_members));
-        else:
-            productBillData =[]
-            productBillData.append(ProductTuple(user_row.qty,user_row.bill_date,user_row.family_members));
-            productdata[user_row.product_name] =productBillData
-    else:
-        productdata ={}
-        tuplelist=[]
-        tuplelist.append(ProductTuple(user_row.qty,
-        user_row.bill_date,user_row.family_members));
-        productdata[user_row.product_name]=tuplelist;
-        user[user_row.userid]= productdata;
-
 
 def calculate(allData,allProducts):
 
