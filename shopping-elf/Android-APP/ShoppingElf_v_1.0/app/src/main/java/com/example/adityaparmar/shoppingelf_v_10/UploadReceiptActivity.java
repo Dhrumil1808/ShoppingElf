@@ -23,7 +23,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class Upload_Receipt extends AppCompatActivity {
+public class UploadReceiptActivity extends AppCompatActivity {
     private static final int ACTIVITY_START_CAMERA_APP = 0;
     private static final int CROPING_CODE = 1;
     private ImageView mPhotoCapturedImageView;
@@ -40,7 +40,7 @@ public class Upload_Receipt extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upload__receipt);
+        setContentView(R.layout.activity_upload_receipt);
 
         mPhotoCapturedImageView = (ImageView) findViewById(R.id.capturePhotoImageView);
 
@@ -57,7 +57,7 @@ public class Upload_Receipt extends AppCompatActivity {
         ibCalender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(Upload_Receipt.this, date, myCalendar
+                new DatePickerDialog(UploadReceiptActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
