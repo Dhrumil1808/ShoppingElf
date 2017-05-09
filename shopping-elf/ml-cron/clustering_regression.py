@@ -56,15 +56,14 @@ def estimate_days(productData,testData,product_cluster):
     #print j
     for i in range(0,j):
         product_name.append(product_cluster)
-        billDate=productData[i].billDate
+
         if(i != j-1):
-            billDate_next=productData[i+1].billDate
-            day=days_between(billDate,billDate_next)
-            days.append(day)
+            days.append(productData[i].estimate_days)
             features_list.append([(float)(productData[i].quantity),(float)(productData[i].family_members)])
 
 
-
+    print days
+    print features_list
 
         # The coefficients
         #print('Coefficients: \n', regr.coef_)
@@ -79,12 +78,20 @@ def estimate_days(productData,testData,product_cluster):
         # Train the model using the training sets
     regr.fit(features_list, days)
 
-    for i in  range(j,len(testData)):
-        product_quantity_people.append([(float)(testData[i].quantity),(float)(testData[i].family_members)])
 
+    print testData
+    product_quantity_people.append([(float)(testData.quantity), (float)(testData.family_members)])
 
+    print product_quantity_people
     result=regr.predict(product_quantity_people)
-    return result
+
+    esitmated_days = 0;
+    for it in result:
+        for val in it:
+            esitmated_days = int(result)
+
+    print esitmated_days
+    return esitmated_days
 
 
 #output=estimate_days(productData)

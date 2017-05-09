@@ -38,9 +38,7 @@ def calculate(allData,allProducts):
                             productdata[product] =userProductData
                     else:
                         productdata ={}
-                        tuplelist=[]
-                        tuplelist.append(userProductData);
-                        productdata[product]=tuplelist;
+                        productdata[product]=userProductData;
                         noHistoryData[user]= productdata;
 
 
@@ -58,14 +56,17 @@ def cluster_estimates(clusters,noHistoryData,allProducts):
             for product,eachNoHistoryProduct in eachNoHistoryData.items():
                 print eachNoHistoryProduct
                 last_bill = eachNoHistoryProduct[len(eachNoHistoryProduct)-1]
-
+                print "********#@$@@@@@@@@@@@@@@@@@@@"
+                print last_bill
                 cluster_products = pcluster.find_all_products(allProducts,clusters,product)
                 if len(cluster_products)>=1:
                     print cluster_products
                     data = pdservice.getProductData(cluster_products);
-                    days = cregression.estimate_days(data,last_bill)
-                    processedData.append(
-                    ProcessedData(user, product, last_bill.quantity, last_bill.billDate, last_bill.family_members,
+                    print data
+                    if(len(data)>optimal_data):
+                        days = cregression.estimate_days(data,last_bill,"cluster_product")
+                        processedData.append(
+                        ProcessedData(user, product, last_bill.quantity, last_bill.billDate, last_bill.family_members,
                                   days))
 
     pdservice.saveData(processedData)
