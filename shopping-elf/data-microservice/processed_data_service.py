@@ -1,19 +1,16 @@
 
-import MySQLdb
+import mysql.connector
 from Models import ShoppingItems
 from Models import ShoppingList
 import collections
+import DbConstants
 
 
-
-
-db = MySQLdb.connect(host="localhost",    # your host, usually localhost
-                     user="root",         # your username
-                     passwd="root",  # your password
-                     db="shopping_elf")        # name of the data base
 
 
 def getShoppingList(userid):
+    db = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,
+                                       database=DbConstants.DATABASE)
     cur = db.cursor()
 
 
@@ -22,8 +19,8 @@ def getShoppingList(userid):
     shoppingList =[]
     for each_row in rows:
         shoppingList.append(ShoppingItems(each_row[0],each_row[1],each_row[2],each_row[3]));
-
-
+    cur.close()
+    db.close()
     return formatShoppingData(shoppingList);
 
 
