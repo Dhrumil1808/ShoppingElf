@@ -49,6 +49,7 @@ def saveData(processedData):
         days= eachData.estimate_days
         #print days
         cron_date = eachData.userId
+        quantity= eachData.quantity
 
         family_members= eachData.family_members
         #print cron_date
@@ -59,10 +60,10 @@ def saveData(processedData):
         if(len(rows_update)==1):
             invoice_date_updated = datetime.strptime(invoice_date, "%Y-%m-%d").strftime('%Y-%m-%d')
             # print cron_date_updated
-            cur.execute("UPDATE inventory SET invoice_date='%s',days= '%s',cron_date= '%s' WHERE user_id ='%s' AND product_name='%s'" %(invoice_date_updated,days,cron_date,user_id,product_name))
+            cur.execute("UPDATE inventory SET invoice_date='%s',days= '%s',cron_date= '%s',quantity='%s' WHERE user_id ='%s' AND product_name='%s' " %(invoice_date_updated,days,cron_date,user_id,product_name,quantity))
             db.commit()
         else:
-            cur.execute("INSERT INTO `inventory`(user_id,product_name,invoice_date,days,cron_date,family_members) VALUES (%s,%s, STR_TO_DATE(%s,'%%Y-%%m-%%d'),%s,NOW(),%s)", (user_id,product_name,invoice_date,days,family_members))
+            cur.execute("INSERT INTO `inventory`(user_id,product_name,invoice_date,days,cron_date,family_members,quantity) VALUES (%s,%s, STR_TO_DATE(%s,'%%Y-%%m-%%d'),%s,NOW(),%s,%s)", (user_id,product_name,invoice_date,days,family_members,quantity))
             db.commit()
 
 

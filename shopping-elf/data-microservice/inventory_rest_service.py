@@ -12,8 +12,13 @@ app = Flask(__name__)
 
 @app.route("/inventory/list/<username>", methods=['GET'])
 def getShoppingList(username):
-    return json.dumps(pdservice.getShoppingList(username))
-    #return jsonify(pdservice.getShoppingList(username))
+    #return  pdservice.getShoppingList(username))
+
+
+    j = json.dumps(pdservice.getShoppingList(username));
+
+
+    return j;
 
 
 if __name__ == "__main__":
