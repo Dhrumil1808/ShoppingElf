@@ -17,8 +17,11 @@ def addUserReciept(billReceipt):
     database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
     cursor = database.cursor()
     for eachItem in billReceipt.billItems:
-        query = """INSERT INTO receipt_data (userid,bill_date,qty,time, product_name, family_members) VALUES (%s,%s,%s,%s,%s,%s)"""
-        cursor.execute(query, (user_id,bill_date, eachItem.quantity, currentDate, eachItem.productName, family_members))
+        try:
+            query = """INSERT INTO receipt_data (userid,bill_date,qty,time, product_name, family_members) VALUES (%s,%s,%s,%s,%s,%s)"""
+            cursor.execute(query, (user_id,bill_date, eachItem.quantity, currentDate, eachItem.productName, family_members))
+        except:
+            return "Something went wrong in data insertion"
     database.commit()
     cursor.close()
     database.close()
@@ -34,7 +37,7 @@ def addProducts(products):
             cursor.execute(query, (eachProduct,))
             database.commit();
         except mysql.connector.Error as err:
-            print("Something went wrong: {}".format(err))
+            return "Something went wrong: {}"+format(err)
     cursor.close()
     database.close()
     return "successful insert"

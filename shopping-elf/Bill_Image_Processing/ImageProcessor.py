@@ -1,7 +1,6 @@
 import subprocess
 import re
 import shlex
-import re
 import ast
 import ReceiptService as receiptService;
 from Models import BillReceipt
@@ -81,6 +80,8 @@ class ImageProcessor:
 
 		products = []
 
+		print dc
+
 		try:
 			for k, v in dc.items():
 				v1 = re.findall(r'\d+', str(v))
@@ -88,10 +89,13 @@ class ImageProcessor:
 				print k
 				print "v1:"
 				print v1
+
 				if len(v1) > 0:
 					finalv = float(str(v1[0]))
 				else:
 					finalv = 1
+				print finalv
+
 				billItem = BillItem (k,finalv);
 				items.append(billItem);
 			billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
