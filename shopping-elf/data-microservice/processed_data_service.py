@@ -13,12 +13,13 @@ def getShoppingList(userid):
                                        database=DbConstants.DATABASE)
     cur = db.cursor()
 
+    query = "SELECT product_name,DATE_FORMAT(invoice_date,'%%m-%%d-%%Y'),days,quantity,ABS(DATEDIFF(NOW(),DATE_ADD(invoice_date,INTERVAL days DAY))) as last FROM `inventory` WHERE  user_id ='%s' and (DATE_ADD(invoice_date,INTERVAL days DAY) < DATE_ADD(NOW(),INTERVAL 2 DAY) or DATE_ADD(invoice_date,INTERVAL days DAY) > DATE_ADD(NOW(),INTERVAL -2 DAY)) and ABS(DATEDIFF(NOW(),DATE_ADD(invoice_date,INTERVAL days DAY)))<7";
 
-    cur.execute("SELECT product_name,DATE_FORMAT(invoice_date,'%%d-%%m-%%Y'),days,quantity FROM `inventory` WHERE  user_id ='%s'  and DATE_ADD(invoice_date,INTERVAL days DAY) > DATE_ADD(NOW(),INTERVAL 2 DAY)" %(userid))
+    cur.execute(query %(userid))
     rows=cur.fetchall()
     shoppingList =[]
     for each_row in rows:
-        shoppingList.append(ShoppingItems(each_row[0],each_row[1],each_row[2],each_row[3]));
+        shoppingList.append(ShoppingItems(each_row[0],each_row[1],each_row[2],each_row[3],each_row[4]));
     cur.close()
     db.close()
     return formatShoppingData(shoppingList);
@@ -32,7 +33,7 @@ def formatShoppingData(shoppingList):
         d['lastBilldate'] = eachData.billDate;
         d['estimate_days'] = eachData.estimate_days;
         d['quantity'] = eachData.quantity;
-
+        d['estimated_days_to_last'] = eachData.estimated_days_to_last;
         sList.append(d)
 
     return sList;

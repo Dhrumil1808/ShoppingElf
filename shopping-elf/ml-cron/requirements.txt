@@ -12,6 +12,6 @@ sudo pip install arrow
 sudo pip install crontab
 
 sudo pip install nltk
-
+pip --no-cache-dir install scipy
 >>> import nltk
 >>> nltk.download()
