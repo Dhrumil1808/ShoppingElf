@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.adityaparmar.shoppingelf_v_10.Upload_Receipt">
+    tools:context="com.example.adityaparmar.shoppingelf_v_10.UploadReceiptActivity">
 
 
 
