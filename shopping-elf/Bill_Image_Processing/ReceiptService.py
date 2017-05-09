@@ -13,16 +13,16 @@ def addUserReciept(billReceipt):
     print user_id
     print family_members
     currentDate= strftime("%Y-%m-%d", gmtime())
-    
+
     database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
     cursor = database.cursor()
     for eachItem in billReceipt.billItems:
         query = """INSERT INTO receipt_data (userid,bill_date,qty,time, product_name, family_members) VALUES (%s,%s,%s,%s,%s,%s)"""
         cursor.execute(query, (user_id,bill_date, eachItem.quantity, currentDate, eachItem.productName, family_members))
-        database.commit()
-        cursor.close()
-        database.close()
-        return "successful insert"
+    database.commit()
+    cursor.close()
+    database.close()
+    return "successful insert"
 
 def addProducts(products):
     database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
@@ -32,9 +32,9 @@ def addProducts(products):
         query = """INSERT INTO products (product_name) VALUES (%s)"""
         cursor.execute(query, (eachProduct,))
         database.commit()
-        cursor.close()
-        database.close()
-        return "successful insert"
+    cursor.close()
+    database.close()
+    return "successful insert"
 
 def fetchAllReciepts(userId):
     database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
@@ -68,13 +68,6 @@ def findUser(username):
         family_members = user_row[1]
         user = User(userid,username,family_members);
     return user;
-
-    # for row in rows:
-    #     d = collections.OrderedDict()
-    #     d['project_id'] = row[0]
-    #     d['project_name'] = row[1]
-    #     d['project_url'] = row[2]
-    #     objects_list.append(d)
 
 def testAdd():
     billItem = BillItem ("sample_product",10);
