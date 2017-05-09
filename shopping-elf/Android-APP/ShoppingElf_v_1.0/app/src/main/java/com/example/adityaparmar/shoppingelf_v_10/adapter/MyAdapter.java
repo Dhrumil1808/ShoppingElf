@@ -1,4 +1,4 @@
-package com.example.adityaparmar.shoppingelf_v_10;
+package com.example.adityaparmar.shoppingelf_v_10.adapter;
 
 /**
  * Created by adityaparmar on 5/7/17.
@@ -11,25 +11,39 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.adityaparmar.shoppingelf_v_10.R;
+import com.example.adityaparmar.shoppingelf_v_10.model.MyModel;
+
+import java.util.List;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private String[] mDataset;
+    //private String[] mDataset;
+    private List<MyModel> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public CardView mCardView;
-        public TextView mTextView;
+        public TextView tv_Date;
+        public TextView tv_Items;
+        public TextView tv_Status;
+        public TextView tv_Message;
+
         public MyViewHolder(View v) {
             super(v);
 
             mCardView = (CardView) v.findViewById(R.id.card_view);
-            mTextView = (TextView) v.findViewById(R.id.tv_text);
+            tv_Date = (TextView) v.findViewById(R.id.tv_Date);
+            tv_Items = (TextView)v.findViewById(R.id.tv_items);
+            tv_Status = (TextView)v.findViewById(R.id.tv_status);
+            tv_Message = (TextView) v.findViewById(R.id.tv_message);
+
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(String[] myDataset) {
+    public MyAdapter(List<MyModel>  myDataset) {
         mDataset = myDataset;
     }
 
@@ -47,11 +61,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.mTextView.setText(mDataset[position]);
+        MyModel members = mDataset.get(position);
+
+        holder.tv_Date.setText("Date: "+members.getDate());
+        holder.tv_Items.setText("Items: "+Integer.toString(members.getItems()));
+        holder.tv_Status.setText("Status: "+ members.getStatus());
+        holder.tv_Message.setText("Message:"+members.getMessage());
+
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 }

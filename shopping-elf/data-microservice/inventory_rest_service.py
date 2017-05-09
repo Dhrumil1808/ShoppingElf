@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory,Response
 
 from flask import json
 from flask import jsonify
@@ -18,7 +18,7 @@ def getShoppingList(username):
     j = json.dumps(pdservice.getShoppingList(username));
 
 
-    return j;
+    return Response(j,mimetype="application/json",content_type="application/json",status=200);
 
 
 if __name__ == "__main__":

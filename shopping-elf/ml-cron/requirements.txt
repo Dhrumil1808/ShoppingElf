@@ -9,5 +9,6 @@ mpld3
 pip install spark
 pip install matplotlib
 sudo pip install arrow
+sudo pip install crontab
 >>> import nltk
 >>> nltk.download()

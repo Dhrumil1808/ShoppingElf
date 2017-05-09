@@ -44,11 +44,11 @@ def saveData(processedData):
         #print user_id
         product_name=eachData.productName
         #print product_name
-        invoice_date = eachData.billDate
+        invoice_date = str(eachData.billDate)
         #print invoice_date
         days= eachData.estimate_days
         #print days
-        cron_date = eachData.userId
+
         quantity= eachData.quantity
 
         family_members= eachData.family_members
@@ -60,8 +60,8 @@ def saveData(processedData):
         if(len(rows_update)==1):
             invoice_date_updated = datetime.strptime(invoice_date, "%Y-%m-%d").strftime('%Y-%m-%d')
             # print cron_date_updated
-            cur.execute("UPDATE inventory SET invoice_date='%s',days= '%s',cron_date= '%s',quantity='%s' WHERE user_id ='%s' AND product_name='%s' " %(invoice_date_updated,days,cron_date,user_id,product_name,quantity))
-            db.commit()
+            cur.execute("UPDATE inventory SET invoice_date='%s',days= '%s',cron_date= NOW(),quantity='%s' WHERE user_id ='%s' AND product_name='%s' " %(invoice_date_updated,days,quantity,user_id,product_name))
+            db.commit(),
         else:
             cur.execute("INSERT INTO `inventory`(user_id,product_name,invoice_date,days,cron_date,family_members,quantity) VALUES (%s,%s, STR_TO_DATE(%s,'%%Y-%%m-%%d'),%s,NOW(),%s,%s)", (user_id,product_name,invoice_date,days,family_members,quantity))
             db.commit()
@@ -72,6 +72,18 @@ def saveData(processedData):
 
 
 def getProductData(products):
+    pdStr= "";
+    size =len(products)
+    i=1;
+    for product in products:
+       pdStr= pdStr+ "'"+product+"'"
+       if(i!=size):
+            pdStr = pdStr +","
+       i=i+1;
+
+    print pdStr
     cur = db.cursor()
-    cur.execute("SELECT * FROM `inventory` WHERE  product_name in (%s)" %(products))
+    query ="SELECT * FROM `inventory` WHERE  product_name in ("+pdStr+")"
+    print query
+    cur.execute(query);
     rows=cur.fetchall()

@@ -13,7 +13,11 @@ def getProducts():
     query = "SELECT product_name FROM products";
     rows = session.execute(query)
     for user_row in rows:
-        products.append(user_row.product_name);
+        if str(user_row.product_name) != '':
+            if len(str(user_row.product_name).strip(":?!\" ")) >2:
+                products.append(str(user_row.product_name));
+    print "*****************************************"
+    print products
     return products;
 
 def fetchAllReciepts(userId):

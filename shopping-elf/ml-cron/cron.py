@@ -13,29 +13,10 @@ import pcluster as pcluster
 optimal_data =2
 
 
-def save():
-    if(user_row.userid in user):
-        productdata = user[user_row.userid];
-        if(user_row.product_name in productdata):
-            eachProductBillData = productdata[user_row.product_name]
-            eachProductBillData.append(ProductTuple(user_row.qty,
-            user_row.bill_date,user_row.family_members));
-        else:
-            productBillData =[]
-            productBillData.append(ProductTuple(user_row.qty,user_row.bill_date,user_row.family_members));
-            productdata[user_row.product_name] =productBillData
-    else:
-        productdata ={}
-        tuplelist=[]
-        tuplelist.append(ProductTuple(user_row.qty,
-        user_row.bill_date,user_row.family_members));
-        productdata[user_row.product_name]=tuplelist;
-        user[user_row.userid]= productdata;
-
 
 def calculate(allData,allProducts):
-
-    #clusters = pcluster.cluster_texts(allProducts, 10);
+    print allProducts
+    clusters = pcluster.cluster_texts(allProducts);
     processedData = [];
     noHistoryData={}
 
@@ -48,7 +29,7 @@ def calculate(allData,allProducts):
                     print days
                     print product
                     last_bill = userProductData[len(userProductData)-1]
-                    #days = 1;
+
                     processedData.append(ProcessedData(user,product, last_bill.quantity, last_bill.billDate,last_bill.family_members,days))
                 else:
                     if (user in noHistoryData):
@@ -61,18 +42,36 @@ def calculate(allData,allProducts):
                         tuplelist.append(userProductData);
                         productdata[product]=tuplelist;
                         noHistoryData[user]= productdata;
-    print  "####################################################"
+
+
+    pdservice.saveData(processedData)
+
+    cluster_estimates(clusters,noHistoryData,allProducts)
+
+
+
+
+def cluster_estimates(clusters,noHistoryData,allProducts):
+    processedData = [];
+
+    for user,eachNoHistoryData in noHistoryData.items():
+            for product,eachNoHistoryProduct in eachNoHistoryData.items():
+                print eachNoHistoryProduct
+                last_bill = eachNoHistoryProduct[len(eachNoHistoryProduct)-1]
+
+                cluster_products = pcluster.find_all_products(allProducts,clusters,product)
+                if len(cluster_products)>=1:
+                    print cluster_products
+                    data = pdservice.getProductData(cluster_products);
+                    days = cregression.estimate_days(data,last_bill)
+                    processedData.append(
+                    ProcessedData(user, product, last_bill.quantity, last_bill.billDate, last_bill.family_members,
+                                  days))
 
     pdservice.saveData(processedData)
 
 
-def cluster_estimates(noHistoryData,products):
-        #for eachNoHistoryData in noHistoryData:
-            #cluster_products = pcluster.find_all_products(allProducts,clusters,userProductData.productName)
-            #data = pdservice.getProductData(cluster_products);
-            #days = cregression.estimate_days(productData)
 
-    return 0
 
 products = dservice.getProducts();
 allData = dservice.fetchAllUserReciepts();
