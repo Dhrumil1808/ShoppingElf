@@ -15,11 +15,9 @@ def reduce_words (text):
 
 
 def process_text(text, stem=True):
-    print text
     """ Tokenize text and stem words removing punctuation """
     text = text.translate(string.punctuation)
 
-    print text
 
     tokens = word_tokenize(text)
     if len(tokens)!=0:
@@ -29,12 +27,6 @@ def process_text(text, stem=True):
     else:
         tokens=[]
         tokens.append(text)
-    print "**********************"
-
-    print text
-
-    print tokens
-    print "**********************"
 
 
     return tokens
@@ -62,7 +54,6 @@ def cluster_texts(texts, clusters=3):
                                  min_df=0.1,
                                  lowercase=True)
 
-    print texts
 
     tfidf_model = vectorizer.fit_transform(texts)
     km_model = KMeans()
@@ -106,4 +97,3 @@ def testclustering():
     products = find_all_products(articles,clusters,"PURPLE SWEET POTATO")
     print products
 
-testclustering()

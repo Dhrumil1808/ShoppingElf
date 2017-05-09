@@ -1,7 +1,4 @@
 
-from Models import UserData
-from Models import ProductData
-from Models import Data
 from Models import ProcessedData
 import uregression as uregression
 import processed_data_service as pdservice
@@ -15,19 +12,16 @@ optimal_data =2
 
 
 def calculate(allData,allProducts):
-    print allProducts
     clusters = pcluster.cluster_texts(allProducts);
     processedData = [];
     noHistoryData={}
-
+    print "calculating per user history"
     for user,userData in allData.items():
         for product,userProductData in userData.items():
 
                 if(len(userProductData) > optimal_data):
-                #call first use case and save processed Data
                     days = uregression.estimate_days(userProductData,product);
-                    print days
-                    print product
+
                     last_bill = userProductData[len(userProductData)-1]
 
                     processedData.append(ProcessedData(user,product, last_bill.quantity, last_bill.billDate,last_bill.family_members,days))
@@ -51,18 +45,14 @@ def calculate(allData,allProducts):
 
 def cluster_estimates(clusters,noHistoryData,allProducts):
     processedData = [];
+    print "calculating per all user history"
 
     for user,eachNoHistoryData in noHistoryData.items():
             for product,eachNoHistoryProduct in eachNoHistoryData.items():
-                print eachNoHistoryProduct
                 last_bill = eachNoHistoryProduct[len(eachNoHistoryProduct)-1]
-                print "********#@$@@@@@@@@@@@@@@@@@@@"
-                print last_bill
                 cluster_products = pcluster.find_all_products(allProducts,clusters,product)
                 if len(cluster_products)>=1:
-                    print cluster_products
                     data = pdservice.getProductData(cluster_products);
-                    print data
                     if(len(data)>optimal_data):
                         days = cregression.estimate_days(data,last_bill,"cluster_product")
                         processedData.append(

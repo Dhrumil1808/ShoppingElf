@@ -52,7 +52,6 @@ def saveData(processedData):
             #print len(rows_update)
             if(len(rows_update)==1):
                 invoice_date_updated = datetime.strptime(invoice_date, "%Y-%m-%d").strftime('%Y-%m-%d')
-                print invoice_date_updated
                 # print cron_date_updated
                 cur.execute("UPDATE inventory SET invoice_date='%s',days= '%s',cron_date= NOW(),quantity='%s' WHERE user_id ='%s' AND product_name='%s' " %(invoice_date_updated,days,quantity,user_id,product_name))
                 database.commit(),
@@ -80,11 +79,9 @@ def getProductData(products):
             pdStr = pdStr +","
        i=i+1;
 
-    print pdStr
     try:
         cur = database.cursor()
         query ="SELECT product_name,days,family_members,quantity,days FROM `inventory` WHERE  product_name in ("+pdStr+")"
-        print query
         cur.execute(query);
         rows=cur.fetchall()
         for r in rows:

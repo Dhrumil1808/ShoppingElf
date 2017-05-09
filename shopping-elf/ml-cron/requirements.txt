@@ -1,14 +1,17 @@
-pip install numpy
-pip install -U scikit-learn
-pip install tensorflow
-pip install flask
-pip install pandas
+sudo pip install numpy
+sudo pip install -U scikit-learn
+sudo pip install tensorflow
+sudo pip install flask
+sudo pip install pandas
 sudo pip install scipy
 pandas
-mpld3
-pip install spark
-pip install matplotlib
+sudo pip install mpld3
+
+sudo pip install matplotlib
 sudo pip install arrow
 sudo pip install crontab
+
+sudo pip install nltk
+
 >>> import nltk
 >>> nltk.download()

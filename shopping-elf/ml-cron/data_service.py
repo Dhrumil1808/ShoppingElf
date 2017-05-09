@@ -21,9 +21,6 @@ def getProducts():
             if str(user_row[0]) != '':
                 if len(str(user_row[0]).strip(":?!\" ")) > 2:
                     products.append(str(user_row[0]));
-        print "*****************************************"
-        print products
-        print rows
     except mysql.connector.Error as err:
         cursor.close()
         database.close()
@@ -75,7 +72,6 @@ def fetchAllUserReciepts():
                                               user_row[2], user_row[4]));
                 productdata[user_row[1]] = tuplelist;
                 user[user_row[0]] = productdata;
-        print user
     except mysql.connector.Error as err:
         cursor.close()
         database.close()
