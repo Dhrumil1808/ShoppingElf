@@ -19,11 +19,15 @@ class ImageProcessor:
 		self.billDate= billDate
 
 	def getImageContents(self):
-		proc = subprocess.Popen(['python', 'pytesseract.py',  'uploads/'+self.filename], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-		#print proc.communicate()[0]
+		try:
+			proc = subprocess.Popen(['python', 'pytesseract.py',  'uploads/'+self.filename], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+			#print proc.communicate()[0]
 
-		originalOutput = proc.communicate()[0]
-		originalString = str(originalOutput)
+			originalOutput = proc.communicate()[0]
+			originalString = str(originalOutput)
+		except:
+			return 'pytesseract processing error'
+
 		#print originalString
 		items = [];
 		groupBynewLine = re.split(r'[\n\r]+', originalString)
@@ -69,26 +73,31 @@ class ImageProcessor:
 				dc[i1]=k1
 
 		#create bill receipt_data
-		user = receiptService.findUser(self.username)
-		print user
-		products = [];
-		for k, v in dc.items():
-			print v
-			billItem = BillItem (k,float(v));
-			products.append(k);
-			if v=='':
-				v='1'
-			v1 = re.sub("\D", "", str(v))
-			# print "v1:"
-			# print v1
-			# print "v:"
-			# print v
-			#v1 = ast.literal_eval(v)
-			#v = filter(lambda x: x.isdigit(), v)
-			# billItem = BillItem (k,float(v1));
-			items.append(billItem);
-		billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
-		receiptService.addUserReciept(billReceipt);
-		receiptService.addProducts(products);
+		try:
+			user = receiptService.findUser(self.username)
+			print user
+		except:
+			return 'please correct the user'
+
+		products = []
+
+		try:
+			for k, v in dc.items():
+				v1 = re.findall(r'\d+', str(v))
+				print "k1:"
+				print k
+				print "v1:"
+				print v1
+				if len(v1) > 0:
+					finalv = float(str(v1[0]))
+				else:
+					finalv = 1
+				billItem = BillItem (k,finalv);
+				items.append(billItem);
+			billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
+			receiptService.addUserReciept(billReceipt);
+			receiptService.addProducts(products);
+		except:
+			return 'please correct input image'
 
 		return dc
