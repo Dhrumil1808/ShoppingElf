@@ -45,3 +45,4 @@ CREATE TABLE shopping_elf.`inventory` (
 insert into shopping_elf.user (userid,family_members,username) values ('1',2,'rash');
 
 insert into shopping_elf.user (userid,family_members,username) values ('2',3,'neil');
+insert into shopping_elf.user (userid,family_members,username) values ('3',3,'rashmishrm74@gmail.com');
