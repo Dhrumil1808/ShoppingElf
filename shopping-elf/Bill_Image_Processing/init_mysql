@@ -25,6 +25,23 @@ CREATE TABLE shopping_elf.user (
     PRIMARY KEY (username)
 );
 
+DROP TABLE IF EXISTS shopping_elf.`inventory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE shopping_elf.`inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) DEFAULT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
+  `invoice_date` date DEFAULT NULL,
+  `days` int(11) DEFAULT NULL,
+  `family_members` int(11) DEFAULT NULL,
+  `cron_date` DATETIME DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
 insert into shopping_elf.user (userid,family_members,username) values ('1',2,'rash');
 
 insert into shopping_elf.user (userid,family_members,username) values ('2',3,'neil');
