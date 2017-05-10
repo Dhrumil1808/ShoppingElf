@@ -16,12 +16,26 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.example.adityaparmar.shoppingelf_v_10.service.UploadImageClient;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UploadReceiptActivity extends AppCompatActivity {
     private static final int ACTIVITY_START_CAMERA_APP = 0;
@@ -35,6 +49,9 @@ public class UploadReceiptActivity extends AppCompatActivity {
     private EditText billdate;
     int b_day,b_month,b_year;
     static final int Dialog_ID=55;
+
+    UploadImageClient service;
+    File imageservicepath;
 
 
     @Override
@@ -50,9 +67,10 @@ public class UploadReceiptActivity extends AppCompatActivity {
 
         //open camera
 
-        //takePhoto();
+        takePhoto();
 
         // select Date Event
+
         ibCalender = (ImageButton)findViewById(R.id.ibcalender);
         ibCalender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +78,20 @@ public class UploadReceiptActivity extends AppCompatActivity {
                 new DatePickerDialog(UploadReceiptActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
+
+
             }
         });
+
+        //services
+
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
+        // Change base URL to your upload server URL.
+        //service = new Retrofit.Builder().baseUrl("http://54.241.140.236:3009").client(client).build().create(UploadImageClient.class);
 
 
     }
@@ -144,6 +174,7 @@ public class UploadReceiptActivity extends AppCompatActivity {
         File storageDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 
         File image = File.createTempFile(imageFileName,".jpg", storageDirectory);
+        imageservicepath =image;
         mImageFileLocation = image.getAbsolutePath();
         mImageCaptureUri = Uri.fromFile(image);
         return image;
@@ -192,8 +223,47 @@ public class UploadReceiptActivity extends AppCompatActivity {
 
     }
 
+    public void uploadimage(View view)
+    {
+        File fileimage = imageservicepath;
+        billdate = (EditText)findViewById(R.id.billdate);
 
-}
+
+
+        String myFormat = "yyyy/MM/dd"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        String bill_date = (sdf.format(myCalendar.getTime()));
+
+       // Toast.makeText(this,bill_date, Toast.LENGTH_LONG).show();
+
+
+
+        RequestBody mFile = RequestBody.create(MediaType.parse("multipart/form-data"), fileimage);
+        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", fileimage.getName(), mFile);
+        RequestBody rbbilldate = RequestBody.create(MediaType.parse("multipart/form-data"), bill_date);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://54.241.140.236:3009")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        UploadImageClient uploadImage = retrofit.create(UploadImageClient.class);
+        Call<ResponseBody> fileUpload = uploadImage.postImage(fileToUpload, rbbilldate);
+        fileUpload.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+               // Toast.makeText(UploadReceiptActivity.this, "Response " + response.raw().message(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(UploadReceiptActivity.this, "Success " + response.body().getSuccess(), Toast.LENGTH_LONG).show();
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                //Log.d(TAG, "Error " + t.getMessage());
+            }
+        });
+        }
+
+    }
+
+
 
 /*
 
