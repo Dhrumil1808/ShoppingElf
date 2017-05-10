@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.adityaparmar.shoppingelf_v_10.adapter.GitHubRepoAdapter;
 import com.example.adityaparmar.shoppingelf_v_10.model.GitHubRepo;
 import com.example.adityaparmar.shoppingelf_v_10.service.GitHubClient;
 
 import java.util.List;
 
-import com.example.adityaparmar.shoppingelf_v_10.adapter.GitHubRepoAdapter;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,7 +29,7 @@ public class Recto extends AppCompatActivity {
         setContentView(R.layout.activity_recto);
 
        listView = (ListView) findViewById(R.id.listgithub);
-        String API_BASE_URL = "https://api.github.com/";
+        String API_BASE_URL = "http://54.241.140.236:3008";
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
@@ -46,8 +46,7 @@ public class Recto extends AppCompatActivity {
         GitHubClient client =  retrofit.create(GitHubClient.class);
 
         // Fetch a list of the Github repositories.
-        Call<List<GitHubRepo>> call =
-                client.reposForUser("fs-opensource");
+        Call<List<GitHubRepo>> call = client.reposForUser();
 
         // Execute the call asynchronously. Get a positive or negative callback.
         call.enqueue(new Callback<List<GitHubRepo>>() {
@@ -57,13 +56,14 @@ public class Recto extends AppCompatActivity {
                 // TODO: use the repository list and display it
                 List<GitHubRepo> respo = response.body();
                 listView.setAdapter(new GitHubRepoAdapter(Recto.this,respo));
-                Toast.makeText(Recto.this,"positive responce",Toast.LENGTH_LONG);
+                Toast.makeText(Recto.this,"positive responce",Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onFailure(Call<List<GitHubRepo>> call, Throwable t) {
                 // the network call was a failure
                 // TODO: handle error
+                Toast.makeText(Recto.this,t.toString(),Toast.LENGTH_LONG).show();
             }
         });
     }
