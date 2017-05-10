@@ -1,0 +1,1528 @@
+ * Running on http://0.0.0.0:3009/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 121-609-468
+130.65.254.16 - - [10/May/2017 01:05:02] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.16 - - [10/May/2017 01:07:03] "POST /bill/upload/aditya HTTP/1.1" 200 -
+2701-01-22
+<ImageProcessor.ImageProcessor instance at 0x7ff5fafe7758>
+processing Image
+running pytessarct
+['PRQJUC\xe2\x80\x98E', '2LB PKG STRAWBERRIES', 'BARTLETT PEARS', '2.38113 @ $1.49 /', 'KIWI FRUIT 2 LB PKG', 'LARGE NAVEL ORANGES', '2.54 lb 0 $0.69 /', 'x LG HASS Avocmos', 'z o 1.99', '']
+1111111
+{0: 'PRQJUCE', 2: 'BARTLETT PEARS', 4: 'KIWI FRUIT 2 LB PKG', 5: 'LARGE NAVEL ORANGES', 7: 'x LG HASS Avocmos', 8: 'z o 199'}
+2222222
+{0: '2LB PKG STRAWBERRIES', 2: '2.38113 @ $1.49 /', 5: '2.54 lb 0 $0.69 /'}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7ff5fafe7c20>
+{'x LG HASS Avocmos': 1, 'PRQJUCE': '2LB', 'BARTLETT PEARS': '2.38113', 'z o 199': 1, 'KIWI FRUIT 2 LB PKG': 1, 'LARGE NAVEL ORANGES': '2.54'}
+k1:
+x LG HASS Avocmos
+v1:
+['1']
+1.0
+k1:
+PRQJUCE
+v1:
+['2']
+2.0
+k1:
+BARTLETT PEARS
+v1:
+['2', '38113']
+2.0
+k1:
+z o 199
+v1:
+['1']
+1.0
+k1:
+KIWI FRUIT 2 LB PKG
+v1:
+['1']
+1.0
+k1:
+LARGE NAVEL ORANGES
+v1:
+['2', '54']
+2.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+2701-01-22
+<ImageProcessor.ImageProcessor instance at 0x7ff5f1532680>
+processing Image
+running pytessarct
+["3025C\xc2\xbb BUURNUITH '! Kb", '\xe2\x80\x9c05 P\xef\xac\x81RLE KRRCK-JHEK BISCUITS 60', '4mm', 'iH\xef\xac\x81JaSSIHLU1{IES DIGESIXUE 4006', '2 @ $1.99', '#656 B MU\xef\xac\x81TQRD SEED 20$ 5', '\xe2\x80\x99333 D EREEN C\xef\xac\x81\xef\xac\x81\xef\xac\x81\xef\xac\x81\xef\xac\x81\xef\xac\x82\xef\xac\x81 1063', '=454?\xc3\xa9f8\xc2\xa7\xef\xac\x81\xef\xac\x82$1 MUR\xef\xac\x81URR 1L8', '3132i [\xef\xac\x81x PDHR THIN 8006M', 'win: usrasamounm', '2732! SUBRR C & H 4 LB', 'amgamen um, 4L8', "6'36 Puma um ngauma", 'mm @ $_0.8\xc2\xa7/L8', 'm mean', '0.64LB @ $0.59fLB', '\xe2\x80\x98QBQGUBGHLIDJRU EX? UIRBIN BLIUE 31L', '033 THRIEHILLI', '0.2m @ $2.09/LB', '9812 NESCFIFE cmssu: moan', '0320 MDH DHRNR HRSRLH 100 EMS', '22 STRING BERNS I', '1.39LB \xef\xac\x82 $1.19/5\xef\xac\x81', 'mun amm\xc2\xa3u', '']
+1111111
+{1: '05 PRLE KRRCKJHEK BISCUITS 60', 3: 'iHJaSSIHLU1IES DIGESIXUE 4006', 5: '656 B MUTQRD SEED 20 5', 6: '333 D EREEN C 1063', 7: '454f81 MURURR 1L8', 9: 'win usrasamounm', 11: 'amgamen um 4L8', 13: 'mm  08L8', 14: 'm mean', 16: 'QBQGUBGHLIDJRU EX UIRBIN BLIUE 31L', 23: 'mun ammu'}
+2222222
+{1: '4mm', 3: '2 @ $1.99', 7: '3132i [\xef\xac\x81x PDHR THIN 8006M', 9: '2732! SUBRR C & H 4 LB', 11: "6'36 Puma um ngauma", 14: '0.64LB @ $0.59fLB', 16: '033 THRIEHILLI', 17: '0.2m @ $2.09/LB', 18: '9812 NESCFIFE cmssu: moan', 19: '0320 MDH DHRNR HRSRLH 100 EMS', 20: '22 STRING BERNS I', 21: '1.39LB \xef\xac\x82 $1.19/5\xef\xac\x81', -1: "3025C\xc2\xbb BUURNUITH '! Kb"}
+2701-01-22
+<ImageProcessor.ImageProcessor instance at 0x7ff5f1532368>
+processing Image
+running pytessarct
+['rmummm 1 KL;', 'PMLE KRM JAIZK Hmuns Eu', '4 9 $0.59', 'E\xe2\x80\x99KIVUKHES DIHEEHUE Wild', '2 @ \xe2\x80\x9c.99', 'D MHSMRH SEMI 20$ 5', 'D BHLEN LWUIMDH 1005i', 'IBBRHSI EURHURH 11.8', '[M PUHR THIN 8005M', 'D BESRN FLOUR 4 LB', "SEW! C E h' 4 LE", 'WTDUR D\xef\xac\x81L 4L5', 'puma HHUE RLEULHH', '3,58L8 @ $0.89/I.H', 'uiNSEE', 'O\xe2\x80\x98HLB @ KOMILB', 'iGALIDxi\xef\xac\x82\xef\xac\x82 EH UIRHIN \xe2\x80\x9cLIVE \xe2\x80\x9c1L', 'r Hm CHILL!', '032W} @ 82.09/18', 'NfSEHf-E CLRSSlE 1006M', 'MUN cmmn HASALR 100 EMS', 'SIRING SEEMS\xe2\x80\x94', '']
+1111111
+{0: 'rmummm 1 KL', 1: 'PMLE KRM JAIZK Hmuns Eu', 3: 'EKIVUKHES DIHEEHUE Wild', 5: 'D MHSMRH SEMI 20 5', 6: 'D BHLEN LWUIMDH 1005i', 7: 'IBBRHSI EURHURH 118', 8: 'M PUHR THIN 8005M', 9: 'D BESRN FLOUR 4 LB', 10: 'SEW C E h 4 LE', 11: 'WTDUR DL 4L5', 12: 'puma HHUE RLEULHH', 14: 'uiNSEE', 15: 'OHLB  KOMILB', 16: 'iGALIDxi EH UIRHIN LIVE 1L', 17: 'r Hm CHILL', 19: 'NfSEHfE CLRSSlE 1006M', 20: 'MUN cmmn HASALR 100 EMS', 21: 'SIRING SEEMS'}
+2222222
+{1: '4 9 $0.59', 3: '2 @ \xe2\x80\x9c.99', 12: '3,58L8 @ $0.89/I.H', 17: '032W} @ 82.09/18'}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7ff5f1532b00>
+{'iGALIDxi EH UIRHIN LIVE 1L': 1, 'EKIVUKHES DIHEEHUE Wild': '2', 'SEW C E h 4 LE': 1, 'IBBRHSI EURHURH 118': 1, 'NfSEHfE CLRSSlE 1006M': 1, 'OHLB  KOMILB': 1, 'PMLE KRM JAIZK Hmuns Eu': '4', 'WTDUR DL 4L5': 1, 'SIRING SEEMS': 1, 'D MH130.65.254.16 - - [10/May/2017 01:07:14] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.16 - - [10/May/2017 01:09:33] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.16 - - [10/May/2017 01:12:09] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:18:53] "POST /bill/upload/aditya HTTP/1.1" 200 -
+SMRH SEMI 20 5': 1, 'uiNSEE': 1, 'M PUHR THIN 8005M': 1, 'D BHLEN LWUIMDH 1005i': 1, 'rmummm 1 KL': 1, 'D BESRN FLOUR 4 LB': 1, 'r Hm CHILL': '032W}', 'MUN cmmn HASALR 100 EMS': 1, 'puma HHUE RLEULHH': '3,58L8'}
+k1:
+iGALIDxi EH UIRHIN LIVE 1L
+v1:
+['1']
+1.0
+k1:
+EKIVUKHES DIHEEHUE Wild
+v1:
+['2']
+2.0
+k1:
+SEW C E h 4 LE
+v1:
+['1']
+1.0
+k1:
+IBBRHSI EURHURH 118
+v1:
+['1']
+1.0
+k1:
+NfSEHfE CLRSSlE 1006M
+v1:
+['1']
+1.0
+k1:
+OHLB  KOMILB
+v1:
+['1']
+1.0
+k1:
+PMLE KRM JAIZK Hmuns Eu
+v1:
+['4']
+4.0
+k1:
+WTDUR DL 4L5
+v1:
+['1']
+1.0
+k1:
+SIRING SEEMS
+v1:
+['1']
+1.0
+k1:
+D MHSMRH SEMI 20 5
+v1:
+['1']
+1.0
+k1:
+uiNSEE
+v1:
+['1']
+1.0
+k1:
+M PUHR THIN 8005M
+v1:
+['1']
+1.0
+k1:
+D BHLEN LWUIMDH 1005i
+v1:
+['1']
+1.0
+k1:
+rmummm 1 KL
+v1:
+['1']
+1.0
+k1:
+D BESRN FLOUR 4 LB
+v1:
+['1']
+1.0
+k1:
+r Hm CHILL
+v1:
+['032']
+32.0
+k1:
+MUN cmmn HASALR 100 EMS
+v1:
+['1']
+1.0
+k1:
+puma HHUE RLEULHH
+v1:
+['3', '58', '8']
+3.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+2701-01-22
+<ImageProcessor.ImageProcessor instance at 0x7ff5f1532950>
+processing Image
+running pytessarct
+['PRQJUC\xe2\x80\x98E', '2LB PKG STRAWBERRIES', 'BARTLETT PEARS', '2.38113 @ $1.49 /', 'KIWI FRUIT 2 LB PKG', 'LARGE NAVEL ORANGES', '2.54 lb 0 $0.69 /', 'x LG HASS Avocmos', 'z o 1.99', '']
+1111111
+{0: 'PRQJUCE', 2: 'BARTLETT PEARS', 4: 'KIWI FRUIT 2 LB PKG', 5: 'LARGE NAVEL ORANGES', 7: 'x LG HASS Avocmos', 8: 'z o 199'}
+2222222
+{0: '2LB PKG STRAWBERRIES', 2: '2.38113 @ $1.49 /', 5: '2.54 lb 0 $0.69 /'}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7ff5f15329e0>
+{'x LG HASS Avocmos': 1, 'PRQJUCE': '2LB', 'BARTLETT PEARS': '2.38113', 'z o 199': 1, 'KIWI FRUIT 2 LB PKG': 1, 'LARGE NAVEL ORANGES': '2.54'}
+k1:
+x LG HASS Avocmos
+v1:
+['1']
+1.0
+k1:
+PRQJUCE
+v1:
+['2']
+2.0
+k1:
+BARTLETT PEARS
+v1:
+['2', '38113']
+2.0
+k1:
+z o 199
+v1:
+['1']
+1.0
+k1:
+KIWI FRUIT 2 LB PKG
+v1:
+['1']
+1.0
+k1:
+LARGE NAVEL ORANGES
+v1:
+['2', '54']
+2.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+2701-01-22
+<ImageProcessor.ImageProcessor instance at 0x7ff5f1532a28>
+processing Image
+running pytessarct
+['PRODUCE', '1.4? 1b a $2.49 /lb', 'UT RED RDMH TUMRTUES', '2.44 lb @ $1.99 /lb', 'UT YELLDU SUT UNIONS', '']
+1111111
+{0: 'PRODUCE', 2: 'UT RED RDMH TUMRTUES', 4: 'UT YELLDU SUT UNIONS'}
+2222222
+{0: '1.4? 1b a $2.49 /lb', 2: '2.44 lb @ $1.99 /lb'}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7ff5f15329e0>
+{'UT RED RDMH TUMRTUES': '2.44', 'UT YELLDU SUT UNIONS': 1}
+k1:
+UT RED RDMH TUMRTUES
+v1:
+['2', '44']
+2.0
+k1:
+UT YELLDU SUT UNIONS
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_173952_72849778.jpg
+<ImageProcessor.ImageProcessor instance at 0x7ff5f1532c68>
+processing Image
+running pytessarct
+['PRQJUC\xe2\x80\x98E', '2LB PKG STRAWBERRIES', 'BARTLETT PEARS', '2.38113 @ $1.49 /', 'KIWI FRUIT 2 LB PKG', 'LARGE NAVEL ORANGES', '2.54 lb 0 $0.69 /', 'x LG HASS Avocmos', 'z o 1.99', '']
+1111111
+{0: 'PRQJUCE', 2: 'BARTLETT PEARS', 4: 'KIWI FRUIT 2 LB PKG', 5: 'LARGE NAVEL ORANGES', 7: 'x LG HASS Avocmos', 8: 'z o 199'}
+2222222
+{0: '2LB PKG STRAWBERRIES', 2: '2.38113 @ $1.49 /', 5: '2.54 lb 0 $0.69 /'}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7ff5f1532fc8>
+{'x LG HASS Avocmos': 1, 'PRQJUCE': '2LB', 'BARTLETT PEARS': '2.38113', 'z o 199': 1, 'KIWI FRUIT 2 LB PKG': 1, 'LARGE NAVEL ORANGES': '2.54'}
+k1:
+x LG HASS Avocmos
+v1:
+['1']
+1.0
+k1:
+PRQJUCE
+v1:
+['2']
+2.0
+k1:
+BARTLETT PEARS
+v1:
+['2', '38113']
+2.0
+k1:
+z o 199
+v1:
+['1']
+1.0
+k1:
+KIWI FRUIT 2 LB PKG
+v1:
+['1']
+1.0
+k1:
+LARGE NAVEL ORANGES
+v1:
+['2', '54']
+2.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_173952_72849778.jpg
+<ImageProcessor.ImageProcessor instance at 0x7ff5f15326c8>
+processing Image
+running pytessarct
+['PRQJUC\xe2\x80\x98E', '2LB PKG STRAWBERRIES', 'BARTLETT PEARS', '2.38113 @ $1.49 /', 'KIWI FRUIT 2 LB PKG', 'LARGE NAVEL ORANGES', '2.54 lb 0 $0.69 /', 'x LG HASS Avocmos', 'z o 1.99', '']
+1111111
+{0: 'PRQJUCE', 2: 'BARTLETT PEARS', 4: 'KIWI FRUIT 2 LB PKG', 5: 'LARGE NAVEL ORANGES', 7: 'x LG HASS Avocmos', 8: 'z o 199'}
+2222222
+{0: '2LB PKG STRAWBERRIES', 2: '2.38113 @ $1.49 /', 5: '2.54 lb 0 $0.69 /'}
+[(u'4', 2, u'aditya')]
+<Mode130.65.254.13 - - [10/May/2017 01:27:16] "POST /bill/upload/aditya HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/project_272/Project-Team-6/shopping-elf/Bill_Image_Processing/ReceiptService.py', reloading
+ls.User instance at 0x7ff5f1548050>
+{'x LG HASS Avocmos': 1, 'PRQJUCE': '2LB', 'BARTLETT PEARS': '2.38113', 'z o 199': 1, 'KIWI FRUIT 2 LB PKG': 1, 'LARGE NAVEL ORANGES': '2.54'}
+k1:
+x LG HASS Avocmos
+v1:
+['1']
+1.0
+k1:
+PRQJUCE
+v1:
+['2']
+2.0
+k1:
+BARTLETT PEARS
+v1:
+['2', '38113']
+2.0
+k1:
+z o 199
+v1:
+['1']
+1.0
+k1:
+KIWI FRUIT 2 LB PKG
+v1:
+['1']
+1.0
+k1:
+LARGE NAVEL ORANGES
+v1:
+['2', '54']
+2.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 121-609-468
+130.65.254.13 - - [10/May/2017 01:35:59] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:06] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:10] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:11] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:11] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:11] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:12] "POST /bill/upload/aditya HTTP/1.1" 200 -
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f7b7e8>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f7bf38>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8e6c8>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8e7a0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f7b170>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8e758>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8e7e8>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8ea28>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8e908>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8eb90>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8e8c0>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8edd0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8eb90>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8eef0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8ee60>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3e94d3050>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Someth130.65.254.13 - - [10/May/2017 01:36:12] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:13] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:13] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:13] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:14] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:14] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:15] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:15] "POST /bill/upload/aditya HTTP/1.1" 200 -
+ing went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3e94d2098>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3e94d21b8>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3e94d2170>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3e94d2440>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3e94d2368>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3e94d2680>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3e94d2440>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3e94d2710>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8eb00>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8ee18>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8ec20>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8e8c0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8ee18>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8ed40>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f8eb90>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f8ea28>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss130.65.254.13 - - [10/May/2017 01:36:15] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:16] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:16] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:17] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:36:17] "POST /bill/upload/aditya HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/project_272/Project-Team-6/shopping-elf/Bill_Image_Processing/ReceiptService.py', reloading
+
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f7b368>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f7b248>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3f2f7be18>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3f2f7b320>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3e94d24d0>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3e94d2050>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fc3e94d24d0>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fc3e94d2050>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong in data insertion
+Something went wrong in data insertion
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 121-609-468
+130.65.254.13 - - [10/May/2017 01:40:00] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:01] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:01] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:01] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:02] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:02] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:03] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:03] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:03] "POST /bill/upload/aditya HTTP/1.1" 200 -
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acab2998>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acab2f38>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acac5050>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acac5170>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acab2560>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acab28c0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acac5368>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acac5908>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acac5560>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acac5b00>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acac5998>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acac5c68>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acac5b90>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acac5ea8>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acac5e60>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80a30050e0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80a3005368>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80a30051b8>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80a3005170>
+processing Ima130.65.254.13 - - [10/May/2017 01:40:04] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:04] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:05] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:05] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:40:05] "POST /bill/upload/aditya HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/project_272/Project-Team-6/shopping-elf/Bill_Image_Processing/ReceiptService.py', reloading
+ge
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80a30053f8>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80a3005290>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80a30054d0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80a3005560>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80a30057a0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80a3005638>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80a3005950>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7f80acac5b90>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7f80acac5560>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 121-609-468
+130.65.254.13 - - [10/May/2017 01:41:20] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:41:21] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:41:21] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:41:22] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:41:22] "POST /bill/upload/aditya HTTP/1.1" 200 -
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fd924114560>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fd924114ef0>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fd924127320>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fd924127248>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fd924114c20>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fd924114128>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fd924127248>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fd924127908>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fd924127b00>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fd924127bd8>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+IMAGE_20170509_183502_232808191.jpg
+<ImageProcessor.ImageProcessor instance at 0x7fd9241272d8>
+processing Image
+running pytessarct
+['r mmrmrnss', 'M4 lb I :1 99 m', '']
+1111111
+{0: 'r mmrmrnss', 1: 'M4 lb I 1 99 m'}
+2222222
+{}
+[(u'4', 2, u'aditya')]
+<Models.User instance at 0x7fd924127d88>
+{'M4 lb I 1 99 m': 1, 'r mmrmrnss': 1}
+k1:
+M4 lb I 1 99 m
+v1:
+['1']
+1.0
+k1:
+r mmrmrnss
+v1:
+['1']
+1.0
+saving recepts!
+adding user recipt
+aditya
+2
+adding
+Something went wrong: {}1292 (22007): Incorrect date value: 'IMAGE_20170509_183502_232808191.jpg' for column 'bill_date' at row 1
+Somethin130.65.254.13 - - [10/May/2017 01:41:22] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:41:23] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:41:23] "POST /bill/upload/aditya HTTP/1.1" 200 -
+130.65.254.13 - - [10/May/2017 01:41:24] "POST /bill/upload/aditya HTTP/1.1" 200 -

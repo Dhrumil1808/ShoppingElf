@@ -18,10 +18,11 @@ class ImageProcessor:
 		self.billDate= billDate
 
 	def getImageContents(self):
+		print "processing Image"
 		try:
 			proc = subprocess.Popen(['python', 'pytesseract.py',  'uploads/'+self.filename], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 			#print proc.communicate()[0]
-
+			print "running pytessarct"
 			originalOutput = proc.communicate()[0]
 			originalString = str(originalOutput)
 		except:
@@ -115,6 +116,7 @@ class ImageProcessor:
 				billItem = BillItem (k,finalv);
 				items.append(billItem);
 			billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
+			print "saving recepts!"
 			receiptService.addUserReciept(billReceipt);
 			receiptService.addProducts(products);
 		except:
