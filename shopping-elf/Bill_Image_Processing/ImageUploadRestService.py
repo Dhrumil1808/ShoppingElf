@@ -26,7 +26,7 @@ def userImageUpload(username):
     file = request.files['file'];
     #jsonObject = request.get_json()
     billDate = request.form['billDate'];
-    
+    print billDate    
     #print filename
 
     if (file and allowed_file(file.filename)):
