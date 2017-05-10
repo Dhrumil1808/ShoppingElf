@@ -22,7 +22,8 @@
                 android:id="@+id/iv_image"
                 android:layout_height="match_parent"
                 android:layout_width="120dp"
-                android:src="@drawable/card_date">
+                android:padding="10dp"
+                android:src="@drawable/fullstock2">
             </ImageView>
 
             <LinearLayout
@@ -35,23 +36,22 @@
                 android:layout_toRightOf ="@+id/iv_image">
 
                 <TextView
-                    android:id="@+id/tv_Date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </TextView>
-
-                <TextView
-                    android:id="@+id/tv_items"
+                    android:id="@+id/tv_Product"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
                 <TextView
-                    android:id="@+id/tv_status"
+                    android:id="@+id/tv_lastbuy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
+                <!--<TextView
+                    android:id="@+id/tv_Quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>-->
                 <TextView
-                    android:id="@+id/tv_message"
+                    android:id="@+id/tv_daysRemaining"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                 </TextView>
@@ -59,6 +59,14 @@
 
 
             </LinearLayout>
+            <View
+                android:id="@+id/stockstatus"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+
+                android:layout_height="5dp"/>
+
+
 
 
         </RelativeLayout>

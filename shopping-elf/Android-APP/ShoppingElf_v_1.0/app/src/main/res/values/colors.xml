@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#229673</color>
     <color name="colorAccent">#f73358</color>
     <color name="card_start">#124796</color>
+    <color name="stockdanger">#ff2d34</color>
+    <color name="stocklimited">#e89600</color>
+    <color name="stockfull">#2daf47</color>
 </resources>
