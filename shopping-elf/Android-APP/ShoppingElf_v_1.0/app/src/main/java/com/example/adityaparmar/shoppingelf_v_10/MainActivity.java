@@ -67,12 +67,13 @@ public class MainActivity extends AppCompatActivity {
 
         if(IsLogIN)
         {
-            Intent i = new Intent(this,LoginActivity.class);
+            Intent i = new Intent(this,UploadReceiptActivity.class);
             startActivity(i);
         }
         else
         {
-
+            Intent i = new Intent(this,Recto.class);
+            startActivity(i);
         }
 
 
