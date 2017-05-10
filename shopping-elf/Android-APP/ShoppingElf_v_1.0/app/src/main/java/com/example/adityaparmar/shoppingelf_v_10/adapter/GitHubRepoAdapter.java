@@ -41,7 +41,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView = (TextView) row.findViewById(R.id.txtlistitems);
 
         GitHubRepo item = values.get(position);
-        String message = item.getName();
+        String message = item.getProductName();
         textView.setText(message);
 
         return row;
