@@ -120,4 +120,14 @@ class ImageProcessor:
 		except:
 			return 'please correct input image'
 
-		return dc
+		mlist = []
+		count = 0
+		for i,j in dc.items():
+			ma1 = {}
+			print i
+			print j
+			ma1['product'] = i
+			ma1['qty'] = j
+			mlist.insert(count,ma1)
+			count+=1
+		return mlist

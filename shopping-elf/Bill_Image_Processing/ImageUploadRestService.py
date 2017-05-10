@@ -35,7 +35,7 @@ def userImageUpload(username):
         imageOutput = ImageProcessor(username, filename, billDate)
         print imageOutput
 
-    return jsonify(imageOutput.getImageContents(), username)
+    return jsonify(imageOutput.getImageContents())
 
 
 if __name__ == "__main__":
