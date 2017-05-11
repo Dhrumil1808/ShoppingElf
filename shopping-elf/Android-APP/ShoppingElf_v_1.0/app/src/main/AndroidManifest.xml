@@ -26,7 +26,6 @@
         <activity
             android:name=".UploadReceiptActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Recto" />
         <activity android:name=".LoginActivity"></activity>
     </application>
 
