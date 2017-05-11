@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Shopper</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Basket</string>
+    <string name="action_settings">Rate Us</string>
     <string name="action_aboutus">Aboutus</string>
     <string name="action_logout">Logout</string>
-    <string name="title_activity_main">Shopper</string>
+    <string name="title_activity_main">Basket</string>
     <string name="section_format">Hello World from section: %1$d</string>
 </resources>
