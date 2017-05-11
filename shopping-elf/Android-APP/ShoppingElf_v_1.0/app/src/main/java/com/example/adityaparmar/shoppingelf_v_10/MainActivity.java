@@ -49,8 +49,12 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
 
+        tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.cameraicon);
+        tabLayout.getTabAt(1).setIcon(R.drawable.shoppingcarticon);
+        tabLayout.getTabAt(2).setIcon(R.drawable.graphicon);
+        tabLayout.getTabAt(3).setIcon(R.drawable.notificationsicon);
 
         // Bucket coding here
 
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Opencamera(View view)
     {
-        Boolean IsLogIN = true;
+        Boolean IsLogIN = false;
 
         if(IsLogIN)
         {
@@ -72,8 +76,9 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Intent i = new Intent(this,Recto.class);
+            Intent i = new Intent(this,LoginActivity.class);
             startActivity(i);
+
         }
 
 
@@ -118,21 +123,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 2;
+            return 4;
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "Receipt";
-                case 1:
-                    return "Bucket";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
-        }
+
     }
 }
 /*
