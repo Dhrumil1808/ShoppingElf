@@ -9,26 +9,45 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.adityaparmar.shoppingelf_v_10.MainActivity$PlaceholderFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:text="Click camera to upload your receipts. Please use crop option which helps app to recognise your list and gives you recomendation." />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="30dp"
-        app:srcCompat="@drawable/camera"
-        android:onClick="Opencamera"
-        android:layout_centerInParent="true"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:text="Click camera to upload your receipts. Please use crop option which helps app to recognise your list and gives you recomendation." />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="30dp"
+                app:srcCompat="@drawable/camera"
+                android:onClick="Opencamera"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
 
 
 </RelativeLayout>
