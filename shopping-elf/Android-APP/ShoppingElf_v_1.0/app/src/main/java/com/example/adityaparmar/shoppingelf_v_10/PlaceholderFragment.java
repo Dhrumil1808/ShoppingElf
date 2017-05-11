@@ -78,11 +78,28 @@ public  class PlaceholderFragment extends Fragment {
                 rv.setLayoutManager(llm);
                 break;
             }
+            case 3:
+            {
+                rootView = inflater.inflate(R.layout.fragment_graph, container, false);
+
+                break;
+            }
+            case 4:{
+
+                rootView = inflater.inflate(R.layout.fragment_notification, container, false);
+                break;
+
+            }
+
 
 
         }
         return rootView;
     }
+
+
+
+
 
     public void feedData()
     {
