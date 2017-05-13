@@ -28,7 +28,7 @@ Response
 ]
 
 
-http://0.0.0.0:3009/user/authenticate
+http://54.241.140.236:3009/user/authenticate
 
 
 {
@@ -36,14 +36,14 @@ http://0.0.0.0:3009/user/authenticate
 	"password":"abcdeffff"
 }
 
-http://0.0.0.0:3009/user/password-update
+http://54.241.140.236:3009/user/password-update
 
 {
 	"email":"abcde",
 	"password":"abcdeffff"
 }
 
-http://0.0.0.0:3009/user/signup
+http://54.241.140.236:3009/user/signup
 
 {
 	"email":"abcde",
