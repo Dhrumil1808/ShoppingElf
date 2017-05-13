@@ -49,6 +49,23 @@ def updateFamilyMembers(user):
     return "successful update"
 
 
+
+def updateApiKey(email,api_key):
+    print "updating user"
+    database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
+    cursor = database.cursor()
+    try:
+        query = """update  user set user_api_key=%s where username =%s"""
+        cursor.execute(query, (api_key,email))
+    except mysql.connector.Error as err:
+            print "Something went wrong: {}" + format(err)
+    database.commit()
+    cursor.close()
+    database.close()
+    return "successful update"
+
+
+
 def findUser(username,password):
     database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
     cursor = database.cursor()

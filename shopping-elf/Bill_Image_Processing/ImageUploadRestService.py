@@ -69,6 +69,17 @@ def passwordUpdate():
 
 
 
+@app.route("/user/update-api-key", methods=['POST'])
+def apiKeyUpdate():
+    request_json=request.get_json()
+    email=request_json['email']
+    api_key=request_json['api-key']
+    return userService.updateApiKey(email,api_key)
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0',port =3009)
