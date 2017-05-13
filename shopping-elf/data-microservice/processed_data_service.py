@@ -24,6 +24,22 @@ def getShoppingList(userid):
     db.close()
     return formatShoppingData(shoppingList);
 
+def getShoppingListProducts(userid):
+    db = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,
+                                       database=DbConstants.DATABASE)
+    cur = db.cursor()
+
+    query = "SELECT product_name FROM `inventory` WHERE  user_id ='%s' and (DATE_ADD(invoice_date,INTERVAL days DAY) < DATE_ADD(NOW(),INTERVAL 2 DAY) or DATE_ADD(invoice_date,INTERVAL days DAY) > DATE_ADD(NOW(),INTERVAL -2 DAY)) and ABS(DATEDIFF(NOW(),DATE_ADD(invoice_date,INTERVAL days DAY)))<7";
+
+    cur.execute(query %(userid))
+    rows=cur.fetchall()
+    shoppingList =[]
+    for each_row in rows:
+        shoppingList.append(each_row[0]);
+    cur.close()
+    db.close()
+    return shoppingList;
+
 
 def getProductConsumption(userid,product_name):
     db = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,

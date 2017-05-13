@@ -61,3 +61,6 @@ http://54.241.140.236:3009/user/update-api-key
 	"email":"rashmishrm74@gmail.com",
 	"api-key":"12312312123123"
 }
+
+--mailing
+http://54.241.140.236:3008/inventory/mail/rashmishrm74@gmail.com
