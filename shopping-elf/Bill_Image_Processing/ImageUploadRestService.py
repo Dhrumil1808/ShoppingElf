@@ -5,6 +5,9 @@ from flask import json
 from ImageProcessor import ImageProcessor
 from flask import jsonify
 from werkzeug import secure_filename
+import UserService as userService
+from Models import UserPojo
+
 
 app = Flask(__name__)
 
@@ -36,6 +39,35 @@ def userImageUpload(username):
         print imageOutput
 
     return jsonify(imageOutput.getImageContents())
+
+@app.route("/user/signup", methods=['POST'])
+def signup():
+    request_json=request.get_json()
+    email=request_json['email']
+    password=request_json['password']
+    family_members=request_json['family_members']
+
+    return userService.addUser(UserPojo(email,password,family_members))
+
+
+@app.route("/user/authenticate", methods=['POST'])
+def login():
+    request_json=request.get_json()
+    email=request_json['email']
+    password=request_json['password']
+
+
+    return userService.findUser(email,password)
+
+
+@app.route("/user/password-update", methods=['POST'])
+def passwordUpdate():
+    request_json=request.get_json()
+    email=request_json['email']
+    password=request_json['password']
+    return userService.updateUserPassword(UserPojo(email,password,0))
+
+
 
 
 if __name__ == "__main__":

@@ -10,3 +10,7 @@
 .idea/Project-Team-6.iml
 
 *.xml
+
+*.pyc
+
+*.pyc

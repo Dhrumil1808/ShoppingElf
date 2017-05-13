@@ -25,6 +25,49 @@ def getShoppingList(userid):
     return formatShoppingData(shoppingList);
 
 
+def getProductConsumption(userid,product_name):
+    db = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,
+                                       database=DbConstants.DATABASE)
+    cur = db.cursor()
+
+    query = "SELECT DATE_FORMAT(invoice_date,'%%m-%%d-%%Y'),bill_date, qty FROM shopping_elf.receipt_data where product_name='%s' and userid= '%s'"
+
+
+    cur.execute(query %(userid,product_name) )
+    rows=cur.fetchall()
+    sList = [];
+    for each_row in rows:
+        d = collections.OrderedDict()
+        d['date'] = each_row[0];
+        d['quantity'] = each_row[1];
+        sList.append(d)
+    cur.close()
+    db.close()
+    return sList;
+
+
+def getNotificationData(userid,product_name):
+    db = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,
+                                       database=DbConstants.DATABASE)
+    cur = db.cursor()
+
+    query = "SELECT DATE_FORMAT(invoice_date,'%%m-%%d-%%Y'),bill_date, qty FROM shopping_elf.receipt_data where product_name='%s' and userid= '%s'"
+
+
+    cur.execute(query %(userid,product_name) )
+    rows=cur.fetchall()
+    sList = [];
+    for each_row in rows:
+        d = collections.OrderedDict()
+        d['date'] = each_row[0];
+        d['quantity'] = each_row[1];
+        sList.append(d)
+    cur.close()
+    db.close()
+    return sList;
+
+
+
 def formatShoppingData(shoppingList):
     sList =[];
     for eachData in shoppingList:

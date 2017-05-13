@@ -24,8 +24,18 @@ class BillItem:
 class User:
     userid =None
     username = "";
+
     family_members="";
     def __init__(self,userid,username, family_members):
         self.userid=userid
         self.username=username
+        self.family_members = family_members;
+
+class UserPojo:
+    email = None
+    password= None
+    family_members= None
+    def __init__(self,email,password, family_members):
+        self.email=email
+        self.password=password
         self.family_members = family_members;

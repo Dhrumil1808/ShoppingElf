@@ -26,3 +26,30 @@ Response
   },
   "rash"
 ]
+
+
+http://0.0.0.0:3009/user/authenticate
+
+
+{
+	"email":"abcde",
+	"password":"abcdeffff"
+}
+
+http://0.0.0.0:3009/user/password-update
+
+{
+	"email":"abcde",
+	"password":"abcdeffff"
+}
+
+http://0.0.0.0:3009/user/signup
+
+{
+	"email":"abcde",
+	"password":"abcde",
+	"family_members":"2"
+
+
+
+}

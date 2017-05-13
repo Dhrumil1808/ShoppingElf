@@ -18,11 +18,14 @@ CREATE TABLE shopping_elf.products (
     PRIMARY KEY (product_name)
 );
 
+drop table if exists shopping_elf.`user`;
 CREATE TABLE shopping_elf.user (
-    userid varchar(40),
+    userid int(11) NOT NULL AUTO_INCREMENT,
     family_members int,
-    username varchar(40),
-    PRIMARY KEY (username)
+    username varchar(200),
+
+    password varchar(200),
+    PRIMARY KEY (userid,username)
 );
 
 DROP TABLE IF EXISTS shopping_elf.`inventory`;
@@ -42,7 +45,7 @@ CREATE TABLE shopping_elf.`inventory` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
-insert into shopping_elf.user (userid,family_members,username) values ('1',2,'rash');
+insert into shopping_elf.user (userid,family_members,username,password) values (1,5,'rashmishrm74@gmail.com',"rash1234");
 
 insert into shopping_elf.user (userid,family_members,username) values ('2',3,'neil');
 insert into shopping_elf.user (userid,family_members,username) values ('3',3,'rashmishrm74@gmail.com');
