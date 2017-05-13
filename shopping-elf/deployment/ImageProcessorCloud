@@ -53,3 +53,11 @@ http://54.241.140.236:3009/user/signup
 
 
 }
+
+
+http://54.241.140.236:3009/user/update-api-key
+
+{
+	"email":"rashmishrm74@gmail.com",
+	"api-key":"12312312123123"
+}
