@@ -20,6 +20,16 @@ def getShoppingList(username):
 
     return j
 
+@app.route("/inventory/notification", methods=['GET'])
+def getNotifications():
+
+
+    j = jsonify(pdservice.getNotificationData());
+
+
+    return j
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0',port=3008)

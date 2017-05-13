@@ -46,25 +46,31 @@ def getProductConsumption(userid,product_name):
     return sList;
 
 
-def getNotificationData(userid,product_name):
+def getNotificationData():
     db = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST,
                                        database=DbConstants.DATABASE)
     cur = db.cursor()
 
-    query = "SELECT DATE_FORMAT(invoice_date,'%%m-%%d-%%Y'),bill_date, qty FROM shopping_elf.receipt_data where product_name='%s' and userid= '%s'"
+    query = "select i.user_id,u.user_api_key, i.product_name from shopping_elf.inventory i , shopping_elf.`user` u where DATEDIFF(NOW(),invoice_date) +1 = days and u.username=i.user_id order by user_id"
 
 
-    cur.execute(query %(userid,product_name) )
+    cur.execute(query)
     rows=cur.fetchall()
-    sList = [];
+    notificationsList=collections.OrderedDict()
+
     for each_row in rows:
-        d = collections.OrderedDict()
-        d['date'] = each_row[0];
-        d['quantity'] = each_row[1];
-        sList.append(d)
+
+        if(each_row[1] in notificationsList):
+            productList = notificationsList[each_row[1]]
+            productList.append(each_row[2])
+        else:
+            productList=[]
+            productList.append(each_row[2])
+            notificationsList[each_row[1]] =productList
+
     cur.close()
     db.close()
-    return sList;
+    return notificationsList;
 
 
 

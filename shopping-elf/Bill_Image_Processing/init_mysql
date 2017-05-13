@@ -23,7 +23,7 @@ CREATE TABLE shopping_elf.user (
     userid int(11) NOT NULL AUTO_INCREMENT,
     family_members int,
     username varchar(200),
-
+    user_api_key varchar (255),
     password varchar(200),
     PRIMARY KEY (userid,username)
 );
