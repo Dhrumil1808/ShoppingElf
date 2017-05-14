@@ -9,8 +9,6 @@ import MailHelper as mailHelper
 
 app = Flask(__name__)
 
-print "Hello"
-print "Happy Monday"
 
 @app.route("/inventory/list/<username>", methods=['GET'])
 def getShoppingList(username):
