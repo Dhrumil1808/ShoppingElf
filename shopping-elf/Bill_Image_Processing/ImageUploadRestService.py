@@ -47,7 +47,7 @@ def signup():
     password=request_json['password']
     family_members=request_json['family_members']
 
-    return userService.addUser(UserPojo(email,password,family_members))
+    return jsonify(userService.addUser(UserPojo(email,password,family_members)))
 
 
 @app.route("/user/authenticate", methods=['POST'])
@@ -57,7 +57,7 @@ def login():
     password=request_json['password']
 
 
-    return userService.findUser(email,password)
+    return jsonify(userService.findUser(email,password))
 
 
 @app.route("/user/password-update", methods=['POST'])
@@ -65,7 +65,7 @@ def passwordUpdate():
     request_json=request.get_json()
     email=request_json['email']
     password=request_json['password']
-    return userService.updateUserPassword(UserPojo(email,password,0))
+    return jsonify(userService.updateUserPassword(UserPojo(email,password,0)))
 
 
 
@@ -74,7 +74,7 @@ def apiKeyUpdate():
     request_json=request.get_json()
     email=request_json['email']
     api_key=request_json['api-key']
-    return userService.updateApiKey(email,api_key)
+    return jsonify(userService.updateApiKey(email,api_key))
 
 
 
