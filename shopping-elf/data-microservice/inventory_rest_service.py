@@ -30,30 +30,7 @@ def getNotifications():
 	products_name=""
 	device_registration_ids=[]
 	message=""
-    #print message_body
-    #registration_id = ["ci9Vh3AIJv4:APA91bF7D2REk3cAUo_eB_2efGfmYNtXY-KYswPKrA0YwRZboIbVpBse4hEc1CKhQWDDMsBlIqYFMc7Rx24i0GoWSDYIytdVTmGZU7YV2e8BfuhAfjO7vvlKEdIYFvQNtwANUcMAb4Kg"]
-	#print len(registration_id[0])
-	#productData=[['A','2','01-25-2017'],['A','12','01-28-2017'],['A','12','01-28-2017'],['A','5','02-15-2017'],['A','10','02-28-2017'],['A','1','03-05-2017'],['A','6','03-06-2017'],['A','10','03-16-2017'],['A','3','04-01-2017'],['A','8','04-03-2017'],['A','5','04-08-2017']]
-	j= {
-    "ci9Vh3AIJv4:APA91bF7D2REk3cAUo_eB_2efGfmYNtXY-KYswPKrA0YwRZboIbVpBse4hEc1CKhQWDDMsBlIqYFMc7Rx24i0GoWSDYIytdVTmGZU7YV2e8BfuhAfjO7vvlKEdIYFvQNtwANUcMAb4Kg": [
-     "DANJOU PEARS",
-     "MINI HATERHELON",
-  	  "RASPBERRIES",
-     "X LG HASS AVOCADOS",
-     "chhfioup HELONS",
-     "KIWI FRUIT 2 LB PKG"
-   	],
-   	"ci9Vh3AIJv4:APA91bF7D2REk3cAUo_eB_2efGfmYNtXY-KYswPKrA0YwRZboIbVpBse4hEc1CKhQWDDMsBlIqYFMc7Rx24i0GoWSDYIytdVTmGZU7YV2e8BfuhAfjO7vvlKEdIYFvQNtwANUcMAb4Lm": [
-     "DANJOU PEARS",
-     "MINI HATERHELON",
-  	  "RASPBERRIES",
-     "X LG AVOCADOS",
-     "chhfioup HELONS",
-     "KIWI FRUIT 2 LB PKG"
-   	]
-   	}
- 	#print len(j)
-
+   
  	for registration_id in j:
  		device_registration_ids.append(registration_id)
  		print device_registration_ids
