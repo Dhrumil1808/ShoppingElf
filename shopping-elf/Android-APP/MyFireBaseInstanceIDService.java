@@ -56,19 +56,17 @@ public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
      */
     private void sendRegistrationToServer(String token) {
 
+        final String reg_Id=token;
         // TODO: Implement this method to send token to your app server.
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
+
+                    Log.d("Token:", "token" + reg_Id);
                     URL url = new URL("http://54.241.140.236:3009/user/update-api-key");
 
-                    URLConnection urlConn=new URLConnection(url) {
-                        @Override
-                        public void connect() throws IOException {
 
-                        }
-                    };
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setReadTimeout(10000);
                     conn.setConnectTimeout(15000);
@@ -81,7 +79,7 @@ public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
                     JSONObject jsonParam = new JSONObject();
                     try {
                         jsonParam.put("email", "rashmishrm74@gmail.com");
-                        jsonParam.put("api-key", "fEsARrbxuDk:APA91bFc86uY-6SPIQxwgHFZVNVpi0CsKoxipTuXNLOkY2ubSr-i0WvbT6-8x0DenREXKI9hAO9koidqZAWRk8ImVOSviCG8QvaPTqXFxiQVeWHLyEc8bDUU2pWKZe2wwFBZpHjGZHvs");
+                        jsonParam.put("api-key",reg_Id);
                     }
                     catch(JSONException e)
                     {
