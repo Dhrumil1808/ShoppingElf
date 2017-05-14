@@ -26,7 +26,7 @@ def getNotifications():
 	if(len(pdservice.getNotificationData())==0):
 		return "No notifications available"
 	else:
-		j = jsonify(pdservice.getNotificationData())
+		j = pdservice.getNotificationData()
 		message_title ="Shopping notification"
 		message_body="You should buy these products by tomorrow : " + "\n"
 		products_name=""
@@ -35,13 +35,13 @@ def getNotifications():
 		
 		#print len(j)
 		
-	 	for registration_id in j:
+	 	for registration_id,value in j.items():
 	 		device_registration_ids.append(registration_id)
 	 		print device_registration_ids
 	 		print "registration_id ", registration_id
-	 		print "length= ", len(j[registration_id])
-	 		for i in range(0,len(j[registration_id])):
-	 			products_name = products_name + j[registration_id][i] + ", "
+	 		print "length= ", len(value)
+	 		for i in range(0,len(value)):
+	 			products_name = products_name + value[i] + ", "
 
 	 		print products_name	
 	 		message = message_body + products_name  + "\n" 
