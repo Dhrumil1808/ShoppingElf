@@ -48,10 +48,10 @@ def estimate_days(productData, name):
 
     product_quantity=np.array(product_quantity).reshape(len(product_quantity),1)
     result=regr.predict(product_quantity)
-    esitmated_days =0;
+    estimated_days =0;
     for it in result:
         for val in it:
-            esitmated_days =  int(val)
+            estimated_days =  int(val)
 
-    return esitmated_days
+    return estimated_days
 
