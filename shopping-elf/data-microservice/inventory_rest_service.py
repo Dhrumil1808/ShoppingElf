@@ -22,29 +22,38 @@ def getShoppingList(username):
 def getNotifications():
 
 	push_service = FCMNotification(api_key="AIzaSyB1byDiSollNF32f7auagCdzRXWqcs8aAs")
-	j = jsonify(pdservice.getNotificationData())
-	message_title ="Shopping notification"
-	message_body="You should buy these products by tomorrow : " + "\n"
-	products_name=""
-	device_registration_ids=[]
-	message=""
-   
- 	for registration_id in j:
- 		device_registration_ids.append(registration_id)
- 		print device_registration_ids
- 		print "registration_id ", registration_id
- 		print "length= ", len(j[registration_id])
- 		for i in range(0,len(j[registration_id])):
- 			products_name = products_name + j[registration_id][i] + ", "
+	
+	if(len(pdservice.getNotificationData())==0):
+		return "No notifications available"
+	else:
+		j = jsonify(pdservice.getNotificationData())
+		message_title ="Shopping notification"
+		message_body="You should buy these products by tomorrow : " + "\n"
+		products_name=""
+		device_registration_ids=[]
+		message=""
+		
+		#print len(j)
+		
+	 	for registration_id in j:
+	 		device_registration_ids.append(registration_id)
+	 		print device_registration_ids
+	 		print "registration_id ", registration_id
+	 		print "length= ", len(j[registration_id])
+	 		for i in range(0,len(j[registration_id])):
+	 			products_name = products_name + j[registration_id][i] + ", "
 
- 		print products_name	
- 		message = message_body + products_name  + "\n" + "Thank You"
- 		result = push_service.notify_multiple_devices(registration_ids=device_registration_ids, message_title=message_title, message_body=message)
- 		print result
- 		products_name=""
- 		message=""
- 		device_registration_ids=[]
- 	return j
+	 		print products_name	
+	 		message = message_body + products_name  + "\n" 
+	 		result = push_service.notify_multiple_devices(registration_ids=device_registration_ids, message_title=message_title, message_body=message)
+	 		print result
+	 		products_name=""
+	 		message=""
+	 		device_registration_ids=[]
+	 	return j
+			
+
+		
 
 @app.route("/inventory/mail/<user>", methods=['GET'])
 def mail(user):
