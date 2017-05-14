@@ -23,60 +23,67 @@ class ImageProcessor:
 			proc = subprocess.Popen(['python', 'pytesseract.py',  'uploads/'+self.filename], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 			#print proc.communicate()[0]
 			print "running pytessarct"
+			print '------------------2222222222222222222222'
 			originalOutput = proc.communicate()[0]
 			originalString = str(originalOutput)
 		except:
 			return 'pytesseract processing error'
 
-		#print originalString
-		items = [];
-		groupBynewLine = re.split(r'[\n\r]+', originalString)
-		# del groupBynewLine[0]
-		# del groupBynewLine[0]
-		# del groupBynewLine[0]
+		try:
+			print '------------1111111111111111'
+			print originalString
+			items = [];
+			groupBynewLine = re.split(r'[\n\r]+', originalString)
+			# del groupBynewLine[0]
+			# del groupBynewLine[0]
+			# del groupBynewLine[0]
 
-		print groupBynewLine
+			print '00000000000000000000'
+			print groupBynewLine
 
-		dict1 = {}
-		dict2 = {}
-		counter = 0
-		support = 1
-		for i in groupBynewLine:
-			if len(i) > 0:
-				if not i[0].isdigit():
-					#i_update = ''.join(e for e in i if e.isalnum())
-					i_update = re.sub(r'([^\s\w]|_)+', '', i)
-					if i_update:
-						dict1[counter]=i_update
-						support = 1
+			dict1 = {}
+			dict2 = {}
+			counter = 0
+			support = 1
+			for i in groupBynewLine:
+				if len(i) > 0:
+					if not i[0].isdigit():
+						#i_update = ''.join(e for e in i if e.isalnum())
+						i_update = re.sub(r'([^\s\w]|_)+', '', i)
+						if i_update:
+							dict1[counter]=i_update
+							support = 1
+						else:
+							support = 0
 					else:
-						support = 0
-				else:
-					dict2[counter-1]=i
-					support = 1
+						dict2[counter-1]=i
+						support = 1
 
-			if support == 1:
-				counter+=1
-			# if not re.search(r"(\d+)", i):
-			
-		print '1111111'
-		print dict1
-		print '2222222'
-		print dict2
+				if support == 1:
+					counter+=1
+				# if not re.search(r"(\d+)", i):
+				
+			print '1111111'
+			print dict1
+			print '2222222'
+			print dict2
 
-		dc = {}
-		for i,j in dict1.items():
-			dc[j]=1
-			for p,q in dict2.items():
-				if i==p:
-					dc[j]=q
+			dc = {}
+			for i,j in dict1.items():
+				dc[j]=1
+				for p,q in dict2.items():
+					if i==p:
+						dc[j]=q
 
-		discardWords = ['PRODUCE','DAIRY','']
-		for p1,q1 in dc.items():
-			if p1 in discardWords:
-				del dc[p1]
-		# print '3333333'
-		# print dc
+			discardWords = ['PRODUCE','DAIRY','']
+			for p1,q1 in dc.items():
+				if p1 in discardWords:
+					del dc[p1]
+			print '3333333'
+			print dc
+		except:
+			print 'basic logical error'
+			return 'please correct input image'
 
 		try:
 			for i1,j1 in dc.items():
@@ -116,7 +123,7 @@ class ImageProcessor:
 				billItem = BillItem (k,finalv);
 				items.append(billItem);
 			billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
-			print "saving recepts!"
+			print "saving receipts!"
 			receiptService.addUserReciept(billReceipt);
 			receiptService.addProducts(products);
 		except:
