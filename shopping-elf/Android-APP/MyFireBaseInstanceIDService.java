@@ -61,7 +61,7 @@ public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
             @Override
             public void run() {
                 try {
-                    URL url = new URL("http://0.0.0.0:3009/user/update-api-key");
+                    URL url = new URL("http://54.241.140.236:3009/user/update-api-key");
 
                     URLConnection urlConn=new URLConnection(url) {
                         @Override
@@ -69,8 +69,6 @@ public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
 
                         }
                     };
-                    DataOutputStream printout;
-                    DataInputStream input;
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setReadTimeout(10000);
                     conn.setConnectTimeout(15000);
@@ -78,7 +76,8 @@ public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
                     conn.setDoInput(true);
                     conn.setDoOutput(true);
                     conn.setRequestProperty("Content-Type","application/json");
-                    conn.setRequestProperty("Host", "http://0.0.0.0:3009/user/update-api-key");
+                    //conn.connect();
+                    // conn.setRequestProperty("Host", "http://0.0.0.0:3009/user/update-api-key");
                     JSONObject jsonParam = new JSONObject();
                     try {
                         jsonParam.put("email", "rashmishrm74@gmail.com");
@@ -88,12 +87,18 @@ public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
                     {
                         e.printStackTrace();
                     }
-                    Log.d("URL","URL:" + URLEncoder.encode(jsonParam.toString()));
+                   // Log.d("URL","URL:" + URLEncoder.encode(jsonParam.toString()));
+                    DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+                    wr.writeBytes(jsonParam.toString());
+                    wr.flush();
+                    wr.close();
+                    int responseCode = conn.getResponseCode();
+                    Log.d("connection:","connection code " + responseCode);
 
-                    printout = new DataOutputStream(urlConn.getOutputStream());
-                    printout.writeBytes(URLEncoder.encode(jsonParam.toString(),"UTF-8"));
-                    printout.flush ();
-                    printout.close ();
+                    //printout = new DataOutputStream(urlConn.getOutputStream());
+                    ///printout.writeBytes(URLEncoder.encode(jsonParam.toString(),"UTF-8"));
+                    //printout.flush ();
+                    //printout.close ();
 
 
 // read the response
