@@ -1,24 +1,15 @@
 package com.shopping.dhrumil.shopping;
 
-import android.net.Uri;
-import android.util.Log;
 
+import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedWriter;
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 
 /**
  * Created by dhrumil on 5/13/17.
