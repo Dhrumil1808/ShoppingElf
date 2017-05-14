@@ -1,8 +1,4 @@
-import matplotlib.pyplot as plt
-import numpy as np
-from sklearn import datasets, linear_model
-import time
-import random
+
 from datetime import datetime
 import mysql.connector
 import DbConstants

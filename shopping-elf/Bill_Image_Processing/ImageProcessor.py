@@ -23,14 +23,12 @@ class ImageProcessor:
 			proc = subprocess.Popen(['python', 'pytesseract.py',  'uploads/'+self.filename], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 			#print proc.communicate()[0]
 			print "running pytessarct"
-			print '------------------2222222222222222222222'
 			originalOutput = proc.communicate()[0]
 			originalString = str(originalOutput)
 		except:
 			return 'pytesseract processing error'
 
 		try:
-			print '------------1111111111111111'
 			print originalString
 			items = [];
 			groupBynewLine = re.split(r'[\n\r]+', originalString)
@@ -38,7 +36,6 @@ class ImageProcessor:
 			# del groupBynewLine[0]
 			# del groupBynewLine[0]
 
-			print '00000000000000000000'
 			print groupBynewLine
 
 			dict1 = {}
@@ -139,4 +136,15 @@ class ImageProcessor:
 			ma1['qty'] = j
 			mlist.insert(count,ma1)
 			count+=1
+
+		try:
+		#call script
+			cronProcess = subprocess.Popen(['nohup','python', '../ml-cron/cron.py'], stdout=subprocess.PIPE,
+								stderr=subprocess.STDOUT)
+			output = cronProcess.communicate()[0]
+			originalString = str(output)
+			print originalString
+		except:
+			print 'cron.py error'
+
 		return mlist
