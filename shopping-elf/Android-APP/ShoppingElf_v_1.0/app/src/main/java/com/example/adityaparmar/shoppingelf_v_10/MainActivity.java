@@ -1,6 +1,8 @@
 package com.example.adityaparmar.shoppingelf_v_10;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
-
+    private Boolean Islogged;
 
 
     @Override
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Bucket coding here
 
+        Islogged = getsharedpreference();
+
 
 
 
@@ -67,9 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void Opencamera(View view)
     {
-        Boolean IsLogIN = false;
 
-        if(IsLogIN)
+        if(Islogged)
         {
             Intent i = new Intent(this,UploadReceiptActivity.class);
             startActivity(i);
@@ -86,8 +89,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+
+        if(Islogged)
+        {
+            getMenuInflater().inflate(R.menu.menu_main, menu);
+            return true;
+        }
+        else
+        {
+            getMenuInflater().inflate(R.menu.menu_init, menu);
+            return true;
+        }
+
     }
 
     @Override
@@ -98,8 +111,41 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+        if(id == R.id.action_signup) {
+
+            Intent i = new Intent(this,LoginActivity.class);
+            startActivity(i);
+
+        }
+
+        if(id == R.id.action_signin) {
+
+            Intent i = new Intent(this,SigninActivity.class);
+            startActivity(i);
+
+        }
+
+        if(id == R.id.action_forgot_password){
+
+        }
+
+
+        if(id == R.id.action_profile) {
+
+            Intent i = new Intent(this,ProfileActivity.class);
+            startActivity(i);
+        }
+
+        if(id == R.id.action_logout){
+
+            Islogged = false;
+            SharedPreferences sharedPreferences = getSharedPreferences("logindata", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.commit();
+            Intent i = new Intent(this,MainActivity.class);
+            startActivity(i);
         }
 
 
@@ -128,6 +174,31 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public Boolean getsharedpreference(){
+
+        try
+        {
+            SharedPreferences sharedPreferences = getSharedPreferences("logindata", Context.MODE_PRIVATE);
+            String email = sharedPreferences.getString("email","");
+            String password = sharedPreferences.getString("password","");
+            if(!email.isEmpty()) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+
+    }
+
+
+
+
 }
 /*
 

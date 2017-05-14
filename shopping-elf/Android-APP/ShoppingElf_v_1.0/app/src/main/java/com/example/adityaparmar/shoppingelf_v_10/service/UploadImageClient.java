@@ -15,6 +15,7 @@ import retrofit2.http.Part;
 public interface UploadImageClient {
 
     @Multipart
-    @POST("/bill/upload/aditya")
+    @POST("/bill/upload/rashmishrm74@gmail.com")
     Call<ResponseBody> postImage(@Part MultipartBody.Part file, @Part("billDate") RequestBody billDate);
 }
+

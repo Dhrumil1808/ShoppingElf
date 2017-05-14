@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rllogin"
+
     tools:context="com.example.adityaparmar.shoppingelf_v_10.LoginActivity">
 
 
@@ -27,7 +28,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                 />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -40,18 +42,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
-                    android:inputType="" />
+                    android:inputType=""
+                />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtfamilymembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Family Members"
+                    android:inputType="number" />
 
             </android.support.design.widget.TextInputLayout>
-            <Button
-                android:id="@+id/btnLogIn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/holo_orange_light"
-                android:text="LOG IN"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"/>
+
 
             <Button
                 android:id="@+id/btnCreateAccount"

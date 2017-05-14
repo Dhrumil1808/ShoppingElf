@@ -13,6 +13,6 @@ import retrofit2.http.GET;
 
 public interface CardsClient {
 
-    @GET("/inventory/list/aditya")
+    @GET("/inventory/list/rashmishrm74@gmail.com")
     Call<List<MyCards>> getcards();
 }

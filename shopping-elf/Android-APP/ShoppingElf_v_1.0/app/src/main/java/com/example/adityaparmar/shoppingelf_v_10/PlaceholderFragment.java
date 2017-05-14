@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.adityaparmar.shoppingelf_v_10.adapter.MyCardsAdapter;
 import com.example.adityaparmar.shoppingelf_v_10.model.MyCards;
@@ -132,7 +131,7 @@ public  class PlaceholderFragment extends Fragment {
                 MyCardsAdapter adapter = new MyCardsAdapter(glist);
                 rv.setAdapter(adapter);
 
-                Toast.makeText(getActivity(),response.body().get(1).getProductName(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(),response.body().get(1).getProductName(),Toast.LENGTH_LONG).show();
                //listView.setAdapter(new GitHubRepoAdapter(Recto.this,respo));
                // Toast.makeText(Recto.this,"positive responce", Toast.LENGTH_LONG);
             }
