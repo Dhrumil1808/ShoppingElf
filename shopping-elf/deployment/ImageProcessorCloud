@@ -53,3 +53,28 @@ http://54.241.140.236:3009/user/signup
 
 
 }
+
+
+http://54.241.140.236:3009/user/update-api-key
+
+{
+	"email":"rashmishrm74@gmail.com",
+	"api-key":"12312312123123"
+}
+
+
+http://54.241.140.236:3008/inventory/notification
+
+{
+  "12312312123123": [
+    "DANJOU PEARS",
+    "MINI HATERHELON",
+    "RASPBERRIES",
+    "X LG HASS AVOCADOS",
+    "chhfioup HELONS",
+    "KIWI FRUIT 2 LB PKG"
+  ]
+}
+
+--mailing
+http://54.241.140.236:3008/inventory/mail/rashmishrm74@gmail.com
