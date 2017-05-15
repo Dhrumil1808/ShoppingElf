@@ -26,3 +26,7 @@
 *.pyc
 
 *.pyc
+
+shopping-elf/Bill_Image_Processing/ImageProcessor.pyc
+
+*.pyc

@@ -118,6 +118,7 @@ class ImageProcessor:
 				print finalv
 
 				billItem = BillItem (k,finalv);
+				products.append(k);
 				items.append(billItem);
 			billReceipt = BillReceipt (self.username,items,self.billDate,user.family_members);
 			print "saving receipts!"
