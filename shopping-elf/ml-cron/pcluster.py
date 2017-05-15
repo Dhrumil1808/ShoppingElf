@@ -28,7 +28,6 @@ def process_text(text, stem=True):
         tokens=[]
         tokens.append(text)
 
-
     return tokens
 
 
@@ -50,8 +49,8 @@ def cluster_texts(texts, clusters=3):
     """ Transform texts to Tf-Idf coordinates and cluster texts using K-Means """
     vectorizer = TfidfVectorizer(tokenizer=process_text,
                                  stop_words=stopwords.words('english'),
-                                 max_df=0.5,
-                                 min_df=0.1,
+                                 max_df=0.95,
+                                 min_df=0.0,
                                  lowercase=True)
 
 
@@ -66,34 +65,4 @@ def cluster_texts(texts, clusters=3):
         clustering[label].append(idx)
 
     return clustering
-
-
-
-def testclustering():
-    articles = []
-    with open("data/product-data.txt","r") as text_file:
-        lines = text_file.read().split("\n")
-
-    articles =['YELLOW MANGOS', 'LARGE NAVEL ORANGES', 'CANTAIOUPE MELONS', 'CANTALOUPE MELONS', "\\'J ELLOW BANANAS", 'HALF PT BLUEBERRIES', 'I:! T T in', 'X LG HASS AVOCADOS', 'HALF RT BLUEBERRIES', 'CUCUMBERS', 'CLUSTER TOMATOES', 'YELLOW BANANAS', 'MINI HATERHELON', 'ORG STRAWBERRIES', 'REDUCED FAT MILK', 'LIMES', 'DANJOU PEARS', 'RASPBERRIES', 'PURPLE SWEET POTATO', 'X LG HASSlAggCADOS'];
-
-    #for i in lines:
-        #print i
-        #articles.append(i)
-
-
-    clusters = cluster_texts(articles, 10)
-    pprint(dict(clusters))
-
-    for c in clusters:
-        #print clusters[c]
-        print "cluster-----****"
-        print  c
-        a =clusters[c]
-        for p in a:
-            #print p
-            print articles[p]
-
-
-    products = find_all_products(articles,clusters,"PURPLE SWEET POTATO")
-    print products
 
