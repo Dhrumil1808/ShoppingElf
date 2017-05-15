@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<MySignupResponse> call, Response<MySignupResponse> response) {
                 //Snackbar.make(findViewById(R.id.main_content), "Account created Successfully",Snackbar.LENGTH_LONG).show();
-                //setsharedpreference(email,password,familymember);
+                setsharedpreference(familymember);
                 APIEmail.APIEMAIL=email;
                 gettocken();
                 Intent i = new Intent(LoginActivity.this,SigninActivity.class);
@@ -119,17 +119,17 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public Boolean setsharedpreference(String email, String password,String family_members)
+    public Boolean setsharedpreference(String family_members)
     {
 
         try
         {
 
-            SharedPreferences sharedPreferences = getSharedPreferences("logindata", Context.MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getSharedPreferences("familymembers", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("email",email);
-            editor.putString("password",password);
+
             editor.putString("family_members",family_members);
+
             editor.apply();
             return true;
         }
