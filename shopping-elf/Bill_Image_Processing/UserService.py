@@ -90,7 +90,7 @@ def findUser(username,password):
     database = mysql.connector.connect(user=DbConstants.USER, passwd=DbConstants.PASSWORD, host=DbConstants.HOST, database=DbConstants.DATABASE)
     cursor = database.cursor()
     userid = None
-    authenticated= "ACCESS_GRANTED";
+    authenticated= "ACCESS_DENIED";
 
     try:
         query = """SELECT userid FROM user where username= %s and password=%s"""
