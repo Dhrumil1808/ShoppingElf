@@ -1,6 +1,7 @@
 package com.example.adityaparmar.shoppingelf_v_10;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.adityaparmar.shoppingelf_v_10.model.APIEmail;
 import com.example.adityaparmar.shoppingelf_v_10.model.MySignInRequest;
 import com.example.adityaparmar.shoppingelf_v_10.model.MySignInResponse;
 import com.example.adityaparmar.shoppingelf_v_10.service.SignInClient;
@@ -42,7 +44,7 @@ public class SigninActivity extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(LoginActivity.this,Email.getText().toString()+Email.getText().length(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(LoginActivity.this,APIEmail.getText().toString()+APIEmail.getText().length(),Toast.LENGTH_LONG).show();
 
 
                 if (checkvalidation()) {
@@ -64,13 +66,13 @@ public class SigninActivity extends AppCompatActivity {
         Password = (EditText) findViewById(R.id.txtsignpassword);
 
         if (Email.getText().length() == 0) {
-            Email.setError("Email is required!");
+            Email.setError("APIEmail is required!");
             return false;
         } else if (Password.getText().length() == 0) {
             Password.setError("Password is required!");
             return false;
         } else if (!(Email.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))) {
-            Email.setError("Email is not Valid!");
+            Email.setError("APIEmail is not Valid!");
             return false;
         } else if (((Password.getText().length()) < 4) || ((Password.getText().length() > 32))) {
             Password.setError("Password should be between 4 to 32 characters!");
@@ -111,11 +113,24 @@ public class SigninActivity extends AppCompatActivity {
             public void onResponse(Call<MySignInResponse> call, Response<MySignInResponse> response) {
                 //Snackbar.make(findViewById(R.id.main_content), "Account created Successfully",Snackbar.LENGTH_LONG).show();
 
-                Toast.makeText(SigninActivity.this,response.body().getMessage(),Toast.LENGTH_LONG).show();
+                String ch = "ACCESS_DENIED";
+                if(ch.equals(response.body().getMessage())){
 
-               // setsharedpreference(email,password);
-                //Intent i = new Intent(SigninActivity.this,MainActivity.class);
-                //startActivity(i);
+                    Toast.makeText(SigninActivity.this,response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                }else
+                {
+                    Toast.makeText(SigninActivity.this,response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                    setsharedpreference(email,password);
+                    APIEmail.APIEMAIL=email;
+                    gettocken();
+                    Intent i = new Intent(SigninActivity.this,MainActivity.class);
+                    startActivity(i);
+                }
+
+
+
 
 
             }
@@ -154,5 +169,10 @@ public class SigninActivity extends AppCompatActivity {
 
 
 
+    }
+    public void gettocken(){
+
+        MyFireBaseInstanceIDService service=new MyFireBaseInstanceIDService();
+        service.onTokenRefresh();
     }
 }

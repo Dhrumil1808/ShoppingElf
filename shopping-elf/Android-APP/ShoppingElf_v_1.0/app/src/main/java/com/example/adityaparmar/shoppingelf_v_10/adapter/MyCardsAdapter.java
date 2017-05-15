@@ -5,12 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.adityaparmar.shoppingelf_v_10.R;
 import com.example.adityaparmar.shoppingelf_v_10.model.MyCards;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by adityaparmar on 5/8/17.
@@ -29,6 +31,7 @@ public class MyCardsAdapter extends RecyclerView.Adapter<MyCardsAdapter.MyViewHo
         public TextView tv_quanty;
         public TextView tv_remainingdays;
         public TextView tv_lastpurchase;
+        public ImageView imageView;
         public View view;
 
         public MyViewHolder(View v) {
@@ -39,6 +42,7 @@ public class MyCardsAdapter extends RecyclerView.Adapter<MyCardsAdapter.MyViewHo
             tv_remainingdays = (TextView)v.findViewById(R.id.tv_daysRemaining);
             //tv_quanty = (TextView)v.findViewById(R.id.tv_Quantity);
             tv_lastpurchase = (TextView)v.findViewById(R.id.tv_lastbuy);
+            imageView = (ImageView)v.findViewById(R.id.iv_image);
             view = (View)v.findViewById(R.id.stockstatus);
 
 
@@ -79,15 +83,33 @@ public class MyCardsAdapter extends RecyclerView.Adapter<MyCardsAdapter.MyViewHo
 
             if(members.getEstimated_days_to_last() >= 5)
             {
-               holder.view.setBackgroundResource(R.color.stockfull);
+                Random rand = new Random();
+                int  n1 = rand.nextInt(3) + 1;
+                if(n1 == 1){
+
+                    holder.imageView.setImageResource(R.drawable.fullstock);
+                }
+                else if(n1 == 2){
+
+                    holder.imageView.setImageResource(R.drawable.fullstock2);
+                }
+                else{
+
+                    holder.imageView.setImageResource(R.drawable.fullstock3);
+                }
+
+                holder.view.setBackgroundResource(R.color.stockfull);
+
             }
             else if(members.getEstimated_days_to_last() <= 2)
             {
                 holder.view.setBackgroundResource(R.color.stockdanger);
+                holder.imageView.setImageResource(R.drawable.fullstock3);
             }
             else
             {
                 holder.view.setBackgroundResource(R.color.stocklimited);
+                holder.imageView.setImageResource(R.drawable.fullstock);
             }
 
 

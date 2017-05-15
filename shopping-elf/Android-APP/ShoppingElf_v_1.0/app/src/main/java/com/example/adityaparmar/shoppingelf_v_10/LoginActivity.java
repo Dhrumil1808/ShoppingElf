@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.adityaparmar.shoppingelf_v_10.model.APIEmail;
 import com.example.adityaparmar.shoppingelf_v_10.model.MySignupRequest;
 import com.example.adityaparmar.shoppingelf_v_10.model.MySignupResponse;
 import com.example.adityaparmar.shoppingelf_v_10.service.SignUpClient;
@@ -99,6 +100,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<MySignupResponse> call, Response<MySignupResponse> response) {
                 //Snackbar.make(findViewById(R.id.main_content), "Account created Successfully",Snackbar.LENGTH_LONG).show();
                 //setsharedpreference(email,password,familymember);
+                APIEmail.APIEMAIL=email;
+                gettocken();
                 Intent i = new Intent(LoginActivity.this,SigninActivity.class);
                 startActivity(i);
 
@@ -150,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if( Email.getText().length() == 0 )
         {
-            Email.setError( "Email is required!" );
+            Email.setError( "APIEmail is required!" );
             return false;
         }
         else if (Password.getText().length() == 0)
@@ -160,7 +163,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         else if( !(Email.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+")))
         {
-            Email.setError( "Email is not Valid!" );
+            Email.setError( "APIEmail is not Valid!" );
             return false;
         }
         else if( ( (Password.getText().length()) < 4 ) ||  ((Password.getText().length() > 32 )))
@@ -173,6 +176,12 @@ public class LoginActivity extends AppCompatActivity {
             return true;
         }
 
+    }
+
+    public void gettocken(){
+
+        MyFireBaseInstanceIDService service=new MyFireBaseInstanceIDService();
+        service.onTokenRefresh();
     }
 
 }

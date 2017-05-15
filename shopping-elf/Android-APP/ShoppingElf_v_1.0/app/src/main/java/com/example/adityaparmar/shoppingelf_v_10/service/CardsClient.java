@@ -6,6 +6,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 /**
  * Created by adityaparmar on 5/8/17.
@@ -13,6 +14,6 @@ import retrofit2.http.GET;
 
 public interface CardsClient {
 
-    @GET("/inventory/list/rashmishrm74@gmail.com")
-    Call<List<MyCards>> getcards();
+    @GET("/inventory/list/{useremailid}")
+    Call<List<MyCards>> getcards(@Path("useremailid") String useremailid);
 }

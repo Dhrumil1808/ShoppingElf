@@ -1,5 +1,7 @@
 package com.example.adityaparmar.shoppingelf_v_10;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -81,14 +83,10 @@ public  class PlaceholderFragment extends Fragment {
             {
                 rootView = inflater.inflate(R.layout.fragment_graph, container, false);
 
+
                 break;
             }
-            case 4:{
 
-                rootView = inflater.inflate(R.layout.fragment_notification, container, false);
-                break;
-
-            }
 
 
 
@@ -119,29 +117,56 @@ public  class PlaceholderFragment extends Fragment {
         CardsClient client =  retrofit.create(CardsClient.class);
 
         // Fetch a list of the Github repositories.
-        Call<List<MyCards>> call = client.getcards();
 
-        // Execute the call asynchronously. Get a positive or negative callback.
-        call.enqueue(new Callback<List<MyCards>>() {
-            @Override
-            public void onResponse(Call<List<MyCards>> call, Response<List<MyCards>> response) {
-                // The network call was a success and we got a response
-                // TODO: use the repository list and display it
-                glist = response.body();
-                MyCardsAdapter adapter = new MyCardsAdapter(glist);
-                rv.setAdapter(adapter);
+       // Toast.makeText(getActivity(),getsharedpreferenceemail(),Toast.LENGTH_LONG).show();
 
-                //Toast.makeText(getActivity(),response.body().get(1).getProductName(),Toast.LENGTH_LONG).show();
-               //listView.setAdapter(new GitHubRepoAdapter(Recto.this,respo));
-               // Toast.makeText(Recto.this,"positive responce", Toast.LENGTH_LONG);
+            if(!getsharedpreferenceemail().isEmpty()){
+                Call<List<MyCards>> call = client.getcards(getsharedpreferenceemail());
+
+                // Execute the call asynchronously. Get a positive or negative callback.
+                call.enqueue(new Callback<List<MyCards>>() {
+                    @Override
+                    public void onResponse(Call<List<MyCards>> call, Response<List<MyCards>> response) {
+                        // The network call was a success and we got a response
+                        // TODO: use the repository list and display it
+                        glist = response.body();
+                        MyCardsAdapter adapter = new MyCardsAdapter(glist);
+                        rv.setAdapter(adapter);
+
+                        //Toast.makeText(getActivity(),response.body().get(1).getProductName(),Toast.LENGTH_LONG).show();
+                        //listView.setAdapter(new GitHubRepoAdapter(Recto.this,respo));
+                        // Toast.makeText(Recto.this,"positive responce", Toast.LENGTH_LONG);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<MyCards>> call, Throwable t) {
+                        // the network call was a failure
+                        // TODO: handle error
+                    }
+                });
+
             }
 
-            @Override
-            public void onFailure(Call<List<MyCards>> call, Throwable t) {
-                // the network call was a failure
-                // TODO: handle error
-            }
-        });
+
+
+    }
+
+
+    public String getsharedpreferenceemail(){
+
+        try
+        {
+            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("logindata", Context.MODE_PRIVATE);
+            String email = sharedPreferences.getString("email","");
+
+
+            return email;
+        }
+        catch(Exception e)
+        {
+            return "error";
+        }
+
     }
 
 

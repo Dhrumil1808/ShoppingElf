@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "956003788897",
+    "firebase_url": "https://shop-1234.firebaseio.com",
+    "project_id": "shop-1234",
+    "storage_bucket": "shop-1234.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956003788897:android:99547b450e39410a",
+        "android_client_info": {
+          "package_name": "com.shopping.dhrumil.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956003788897-0cnbtf9ecg9757sb8hiic622kq556p5o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shopping.dhrumil.shop",
+            "certificate_hash": "3b9ffef53d61427c138b754921e669f7972db0f9"
+          }
+        },
+        {
+          "client_id": "956003788897-hvf5ka09oro2n5q3f9kmumr8epmeg96i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcPLwN6y7NzfSXEFaaq9VpPyrMmhCrVug"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956003788897-hvf5ka09oro2n5q3f9kmumr8epmeg96i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956003788897:android:533a9cff54734d06",
+        "android_client_info": {
+          "package_name": "com.shopping.dhrumil.shopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956003788897-000ris06bqqkeo35ki0bag5tb28k9p23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shopping.dhrumil.shopping",
+            "certificate_hash": "3b9ffef53d61427c138b754921e669f7972db0f9"
+          }
+        },
+        {
+          "client_id": "956003788897-hvf5ka09oro2n5q3f9kmumr8epmeg96i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcPLwN6y7NzfSXEFaaq9VpPyrMmhCrVug"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956003788897-hvf5ka09oro2n5q3f9kmumr8epmeg96i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956003788897:android:6433a050f2cc60a1",
+        "android_client_info": {
+          "package_name": "com.example.adityaparmar.shoppingelf_v_10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956003788897-9s0e5l9hb68e3gho1h97kqrkc9ffn99q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adityaparmar.shoppingelf_v_10",
+            "certificate_hash": "9c7b96648456fc0f882742a18333a43dc5d3850c"
+          }
+        },
+        {
+          "client_id": "956003788897-hvf5ka09oro2n5q3f9kmumr8epmeg96i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcPLwN6y7NzfSXEFaaq9VpPyrMmhCrVug"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956003788897-hvf5ka09oro2n5q3f9kmumr8epmeg96i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

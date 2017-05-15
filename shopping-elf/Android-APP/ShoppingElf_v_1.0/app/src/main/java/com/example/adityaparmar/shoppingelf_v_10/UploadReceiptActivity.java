@@ -3,7 +3,9 @@ package com.example.adityaparmar.shoppingelf_v_10;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -259,7 +261,7 @@ public class UploadReceiptActivity extends AppCompatActivity {
 
 
 
-
+            String userid = getsharedpreferenceemail();
             // Toast.makeText(this,String.valueOf(fileimage.length()), Toast.LENGTH_LONG).show();
 
             // uploadprogress(100000);
@@ -272,7 +274,7 @@ public class UploadReceiptActivity extends AppCompatActivity {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             UploadImageClient uploadImage = retrofit.create(UploadImageClient.class);
-            Call<ResponseBody> fileUpload = uploadImage.postImage(fileToUpload, rbbilldate);
+            Call<ResponseBody> fileUpload = uploadImage.postImage(fileToUpload, rbbilldate,userid);
             fileUpload.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -314,7 +316,7 @@ public class UploadReceiptActivity extends AppCompatActivity {
         int cmbillyear = Integer.parseInt(cal2[0]);
         int cmbillmonth = Integer.parseInt(cal2[1]);
         int cmbillday = Integer.parseInt(cal2[2]);
-        Snackbar.make(findViewById(R.id.rlreceiptuploads), billyear+" "+cmbillyear,Snackbar.LENGTH_LONG).show();
+        //Snackbar.make(findViewById(R.id.rlreceiptuploads), billyear+" "+cmbillyear,Snackbar.LENGTH_LONG).show();
 
 
         if(billyear <= cmbillyear)
@@ -369,6 +371,22 @@ public class UploadReceiptActivity extends AppCompatActivity {
 
 
 
+
+    }
+    public String getsharedpreferenceemail(){
+
+        try
+        {
+            SharedPreferences sharedPreferences = getSharedPreferences("logindata", Context.MODE_PRIVATE);
+            String email = sharedPreferences.getString("email","");
+
+
+            return email;
+        }
+        catch(Exception e)
+        {
+            return "error";
+        }
 
     }
 

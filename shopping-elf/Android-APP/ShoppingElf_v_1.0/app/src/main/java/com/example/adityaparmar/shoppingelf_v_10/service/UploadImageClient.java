@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 /**
  * Created by adityaparmar on 5/9/17.
@@ -15,7 +16,7 @@ import retrofit2.http.Part;
 public interface UploadImageClient {
 
     @Multipart
-    @POST("/bill/upload/rashmishrm74@gmail.com")
-    Call<ResponseBody> postImage(@Part MultipartBody.Part file, @Part("billDate") RequestBody billDate);
+    @POST("/bill/upload/{userid}")
+    Call<ResponseBody> postImage(@Part MultipartBody.Part file, @Part("billDate") RequestBody billDate,@Path("userid") String userid);
 }
 
