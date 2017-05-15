@@ -98,9 +98,13 @@
         <activity
             android:name=".UploadReceiptActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SigninActivity" />
+        <activity android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity android:name=".ProfileActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".SigninActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".fake"></activity>
     </application>
 

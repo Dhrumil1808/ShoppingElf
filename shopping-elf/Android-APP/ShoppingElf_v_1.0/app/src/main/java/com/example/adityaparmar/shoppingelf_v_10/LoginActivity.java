@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnCreateAccount = (Button)findViewById(R.id.btnCreateAccount);
         Email = (EditText)findViewById(R.id.txtemail);
         Password = (EditText)findViewById(R.id.txtpassword);
@@ -98,10 +97,10 @@ public class LoginActivity extends AppCompatActivity {
         callsignup.enqueue(new Callback<MySignupResponse>() {
             @Override
             public void onResponse(Call<MySignupResponse> call, Response<MySignupResponse> response) {
-                //Snackbar.make(findViewById(R.id.main_content), "Account created Successfully",Snackbar.LENGTH_LONG).show();
-                setsharedpreference(familymember);
+
                 APIEmail.APIEMAIL=email;
                 gettocken();
+                Toast.makeText(LoginActivity.this,"Account Created...",Toast.LENGTH_LONG).show();
                 Intent i = new Intent(LoginActivity.this,SigninActivity.class);
                 startActivity(i);
 
@@ -109,7 +108,8 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MySignupResponse> call, Throwable t) {
-                Snackbar.make(findViewById(R.id.rllogin), "Something went wrong !!",Snackbar.LENGTH_LONG).show();
+
+                Toast.makeText(LoginActivity.this,"Something went wrong !",Toast.LENGTH_LONG).show();
 
             }
         });

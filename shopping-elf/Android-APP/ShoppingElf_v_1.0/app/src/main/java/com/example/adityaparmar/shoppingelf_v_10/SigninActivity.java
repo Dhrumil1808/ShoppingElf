@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +33,7 @@ public class SigninActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
 
         Email = (EditText) findViewById(R.id.txtsigninemail);
@@ -116,15 +115,16 @@ public class SigninActivity extends AppCompatActivity {
                 String ch = "ACCESS_DENIED";
                 if(ch.equals(response.body().getMessage())){
 
-                    Toast.makeText(SigninActivity.this,response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SigninActivity.this,"Enter right credentials.", Toast.LENGTH_LONG).show();
 
                 }else
                 {
-                    Toast.makeText(SigninActivity.this,response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(SigninActivity.this,response.body().getMessage(), Toast.LENGTH_LONG).show();
 
                     setsharedpreference(email,password);
                     APIEmail.APIEMAIL=email;
                     gettocken();
+                    Toast.makeText(SigninActivity.this,"Successfully Logged In.", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(SigninActivity.this,MainActivity.class);
                     startActivity(i);
                 }
@@ -137,8 +137,8 @@ public class SigninActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MySignInResponse> call, Throwable t) {
-                Snackbar.make(findViewById(R.id.rllogin), "Something went wrong !!",Snackbar.LENGTH_LONG).show();
 
+                Toast.makeText(SigninActivity.this,"Account Created...",Toast.LENGTH_LONG).show();
             }
         });
 

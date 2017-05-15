@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Intent i = new Intent(this,LoginActivity.class);
+            Intent i = new Intent(this,SigninActivity.class);
             startActivity(i);
 
         }
@@ -184,9 +184,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if(id == R.id.action_forgot_password){
-
-        }
 
 
         if(id == R.id.action_profile) {

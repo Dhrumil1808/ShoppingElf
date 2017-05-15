@@ -32,6 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         txtemail = (EditText)findViewById(R.id.txtprofilemail);
         txtpassword=(EditText)findViewById(R.id.txtprofilpassword);
