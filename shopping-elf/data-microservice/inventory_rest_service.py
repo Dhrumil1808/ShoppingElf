@@ -38,7 +38,7 @@ def getNotifications():
 	 	for registration_id,value in j.items():
 	 		device_registration_ids.append(registration_id)
 	 		for i in range(0,len(value)):
-	 			products_name = products_name + value[i] + ", "
+	 			products_name = products_name + str(value[i]).title() + "\n"
 	 		message = message_body + products_name  + "\n" 
 	 		result = push_service.notify_multiple_devices(registration_ids=device_registration_ids, message_title=message_title, message_body=message)
 	 		print result
