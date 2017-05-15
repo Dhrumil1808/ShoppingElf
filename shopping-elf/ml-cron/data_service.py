@@ -50,7 +50,7 @@ def fetchAllUserReciepts():
     cursor = database.cursor()
     user = {}
     try:
-        query = """SELECT userid,product_name,bill_date,qty,family_members FROM receipt_data"""
+        query = """SELECT userid,product_name,bill_date,qty,family_members FROM receipt_data order by userid,product_name,bill_date asc"""
         cursor.execute(query)
         rows = cursor.fetchall()
         user = {}
