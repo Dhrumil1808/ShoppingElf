@@ -1,3 +1,0 @@
-[{"id":1, "user_id":1, "product_name":"A", "invoice_date":"2017-05-02", "days":4, "cron_date":"2017-04-22"},
- {"id":2, "user_id":1, "product_name":"B", "invoice_date":"2017-03-05", "days":7, "cron_date":"2017-04-22"},
- {"id":3, "user_id":1, "product_name":"C", "invoice_date":"2017-04-10", "days":14, "cron_date":"2017-04-22"}]
