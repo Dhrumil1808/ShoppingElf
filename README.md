@@ -25,3 +25,7 @@ https://github.com/SJSU272LabS17/Project-Team-6/blob/master/shopping-elf/Android
 
 ## Project Report:
 https://github.com/SJSU272LabS17/Project-Team-6/blob/master/shopping-elf/IEEE_Project_Report.pdf
+
+
+## Services used by Android app are deployed on ec2. Deployment description:
+https://github.com/SJSU272LabS17/Project-Team-6/blob/master/shopping-elf/deployment/ImageProcessorCloud
