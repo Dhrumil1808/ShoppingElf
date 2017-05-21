@@ -6,7 +6,6 @@ Customer scans reciepts on App, App stores analyzes data and user gets notificat
  
 Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery-experience/ 
  
- ## Proposal Project 2
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Prestore.png)
 
 ## Project 1 Implementation - Shopping-Elf App - Basket
