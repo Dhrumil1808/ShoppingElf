@@ -39,4 +39,4 @@ https://github.com/SJSU272LabS17/Project-Team-6/blob/master/shopping-elf/deploym
 
 
 ## EC2 instance IP on which services are deployed:
-54.241.140.236
+http://54.241.140.236
