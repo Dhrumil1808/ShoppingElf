@@ -1,6 +1,6 @@
 
 ## Shopping-Elf App - APPROVED
-## Proposal Project 1 - APPROVED
+
 Customers like to believe that businesses understand them. The incorporation of mobile into the store allows tracking of their previous purchases and search history to target each customer as an individual with customized recommendations and repeatable baskets.Furthermore, mobile apps with inbuilt machine learning algorithms can remind users when they are likely to run out of groceries and help them prepare the to-buy list automatically.
 Customer scans reciepts on App, App stores analyzes data and user gets notifications on low inventory, automated shopping lists every month/weekly and nearest store suggestions. Buying patterns can be analyzed for diet and health products recommendations etc.
  
@@ -38,5 +38,5 @@ https://github.com/SJSU272LabS17/Project-Team-6/blob/master/shopping-elf/IEEE_Pr
 https://github.com/SJSU272LabS17/Project-Team-6/blob/master/shopping-elf/deployment/ImageProcessorCloud
 
 
-## EC2 instance IP on which services are deployed:
+## EC2 instance IP on which services are deployed which are called from Android:
 http://54.241.140.236
