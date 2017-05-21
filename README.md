@@ -8,7 +8,7 @@ Reference : https://blog.aspiresys.com/retail/building-a-better-in-store-grocery
  
 ![My Image](https://github.com/SJSU272LabS17/Project-Team-6/blob/master/Prestore.png)
 
-## Project 1 Implementation - Shopping-Elf App - Basket
+## Project Implementation - Shopping-Elf App - Basket
 
 ## Abstract: 
 
